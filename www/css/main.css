@@ -1192,6 +1192,11 @@ select {
   width: 35px;
   height: 35px; }
 
+.input-row label {
+  width: 50%; }
+.input-row label + input {
+  width: 40%; }
+
 * {
   -webkit-touch-callout: none;
   /* prevent callout to copy image, etc when tap to hold */

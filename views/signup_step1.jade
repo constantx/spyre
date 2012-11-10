@@ -1,0 +1,24 @@
+extends layout
+
+block bar-title-center
+  h1.title= title
+
+block bar-title-right
+  a.button(href='/signin', data-transition='slide-in') Sign in
+
+block content
+  #welcome
+    .content-padded
+      #signup
+        h1 Sign up
+        #via-social
+          a.button via Facebook
+          &nbsp;
+          a.button via Twitter
+        #via-email
+          #via-or or with your email
+          form
+            input(type='text', placeholder='email')
+            input(type='password', placeholder='and password')
+            input(type='password', placeholder='confirm password')
+            a.button.button-block(href='/signup/step2.html', data-transition='slide-in') Confirm

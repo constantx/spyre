@@ -39,7 +39,8 @@ ehthumbs.db
 Thumbs.db
 
 # custom
-build/
-.sass-cache/
+node_modules
+build
+.sass-cache
 *.xcodeproj
-spyre/
+spyre

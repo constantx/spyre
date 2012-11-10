@@ -1,0 +1,7 @@
+*.coffee
+./package.json
+./Profile
+/vendor/*
+/public/*
+.git
+.sass-cache

@@ -1,0 +1,24 @@
+extends layout
+
+block bar-title-center
+  h1.title= title
+
+block content
+  #signup-step2
+    .content-padded
+      div
+        p
+          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse ut purus. Suspendisse tristique. Cras et sem at odio porttitor mattis. Donec dignissim ornare tortor. Donec lectus turpis, tempor id, cursus vitae,
+        p  
+        form
+          .input-group
+            .input-row
+              label Cigarettes smoked per day
+              input(type='text', placeholder='')
+            .input-row
+              label Cost per pack
+              input(type='text', placeholder='')
+            .input-row
+              label Date Quit
+              input(type='date', placeholder='')
+        a.button-main Done

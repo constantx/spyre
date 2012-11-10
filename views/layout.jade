@@ -1,0 +1,45 @@
+!!! 5
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='format-detection', content='telephone=no')
+    meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi')
+    
+    //- Makes your prototype chrome-less once bookmarked to your phone's home screen
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    
+    //- Set Apple icons for when prototype is saved to home screen
+    link(rel='apple-touch-icon-precomposed', sizes='57x57',   href='/res/icon/ios/icons/icon-57.png')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/res/icon/ios/icons/icon-57-2x.png')
+    
+    link(rel='stylesheet', type='text/css', href='/css/main.css')
+    
+    title #{title}
+  body
+    block bar-title
+      header.bar-title
+        block bar-title-left
+        block bar-title-center
+          h1.title Spyre
+        block bar-title-right
+
+    .content
+      block content
+
+    block bar-tab
+      nav.bar-tab
+        ul.tab-inner
+          li.tab-item.active
+            a(href='#')
+              img.tab-icon(src='img/icon-home.png')
+          li.tab-item
+            a(href='#')
+              img.tab-icon(src='img/icon-stats.png')
+          li.tab-item
+            a(href='#')
+              img.tab-icon(src='img/icon-settings.png')
+
+    script(type='text/javascript', src='/cordova-2.1.0.js')
+    script(type='text/javascript', src='/js/libs/ratchet.min.js')
+    script(type='text/javascript', src='/js/main.js')
