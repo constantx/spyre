@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Set Apple icons for when prototype is saved to home screen -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="res/icon/ios/icons/icon-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="res/icon/ios/icons/icon-57-2x.png">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <title>spyre</title>
+  </head>
+  <body>
+    <header class="bar-title">
+      <h1 class="title">Spyre</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <div class="content-padded">
+        <div id="signup">
+          <h1>Sign up</h1>
+          <div id='via-social'>
+            <a class="button">via Facebook</a>
+            <a class="button">via Twitter</a>
+          </div>
+          <div id='via-email'>
+            <div id="via-or">or with your email</div>
+            <form>
+              <input type="text" placeholder="email">
+              <input type="password" placeholder="and password">
+              <input type="password" placeholder="confirm password">
+              <a href="#" class="button button-block" data-transition="slide-in">Confirm</a>
+            </form>
+          </div>
+          <div id="signin">
+            <ul class="list">
+              <li>Already has an account? <a class="button-main">Sign in</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <nav class="bar-tab">
+        <ul class="tab-inner">
+          <li class="tab-item active">
+            <a href="#">
+              <img class="tab-icon" src="img/icon-home.png">
+            </a>
+          </li>
+          <li class="tab-item">
+            <a href="#">
+              <img class="tab-icon" src="img/icon-stats.png">
+            </a>
+          </li>
+          <li class="tab-item">
+            <a href="#">
+              <img class="tab-icon" src="img/icon-settings.png">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <script type="text/javascript" src="cordova-2.1.0.js"></script>
+    <script type="text/javascript" src="js/libs/ratchet.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+      // app init here
+    </script>
+  </body>
+</html>
