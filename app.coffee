@@ -23,10 +23,18 @@ app.configure "development", ->
   app.use express.errorHandler()
 
 app.get "/",                routes.signup
-app.get "/signup",          routes.signup
-app.get "/onboarding",      routes.onboarding
-app.get "/signin*",         routes.signin
 app.get "/home",            routes.home
+app.get "/stats",           routes.stats
+app.get "/settings",        routes.settings
+app.get "/signup",          routes.signup
+app.get "/signin",          routes.signin
+
+app.get "/onboarding",      routes.onboarding_1
+app.get "/onboarding/1",    routes.onboarding_1
+app.get "/onboarding/2",    routes.onboarding_2
+app.get "/onboarding/3",    routes.onboarding_3
+app.get "/onboarding/4",    routes.onboarding_4
+app.get "/onboarding/5",    routes.onboarding_5
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")

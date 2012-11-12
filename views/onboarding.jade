@@ -1,45 +1,27 @@
-extends layout
+extends layouts/base
 
 block bar-title-center
   h1.title= title
+
+block bar-title-left
+  if step != 1 
+    - lastStep = step - 1
+    a.button.button-back(href='/onboarding/#{lastStep}', data-transition='slide-out') Back
 
 //- no bar tab on signup page
 block bar-tab
 
 block content
-  #signup-step2
-    .content-padded
-      .slider
-        ul
-          li
-            p
-              | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse ut purus. Suspendisse tristique. Cras et sem at odio porttitor mattis. Donec dignissim ornare tortor. Donec lectus turpis, tempor id, cursus vitae,
-            p  
-            form
-              .input-group
-                .input-row
-                  label Cigarettes smoked per day
-                  input(type='text', placeholder='')
-                .input-row
-                  label Cost per pack
-                  input(type='text', placeholder='')
-                .input-row
-                  label Date Quit
-                  input(type='date', placeholder='')
-            a.button-main(href='/home') next
-          li
-            p when you go on vacation, do you:
-            a.button-main have a plan
-            a.button-main wing it
-          li
-            p in school, do you like
-            a.button-main science class
-            a.button-main art class
-          li
-            p in general, do you
-            a.button-main look for the truth
-            a.button-main empathize with others
-          li
-            p how long after wake up do you have your fist cigarettes?
-            input(type='text', placeholder='')
-            a.button-main(href='/home') done
+  .onboarding(id='onboarding#{step}')
+    .content-padded      
+      case step
+        when 1
+          include partials/_onboarding_1
+        when 2
+          include partials/_onboarding_2
+        when 3
+          include partials/_onboarding_3
+        when 4
+          include partials/_onboarding_4
+        when 5
+          include partials/_onboarding_5

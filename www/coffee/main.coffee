@@ -1,8 +1,12 @@
-###global $:true###
+###global $:true, Backbone:true, _:true###
 
 (->
   $(document).ready ->
     window.Spyre = {}
-    
-    window.Spyre.View = new window.AppView()
+    window.Ev = _.extend({},Backbone.Events)
+
+    appView = new window.AppView()
+    tabBarView = new window.BarTabView()
+
+    @
 )();

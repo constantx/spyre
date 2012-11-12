@@ -6,9 +6,21 @@ exports.home = function(req, res) {
   });
 };
 
+exports.stats = function(req, res) {
+  return res.render("stats", {
+    title: "Stats"
+  });
+};
+
+exports.settings = function(req, res) {
+  return res.render("settings", {
+    title: "Settings"
+  });
+};
+
 exports.signin = function(req, res) {
   return res.render("signin", {
-    title: "Spyre"
+    title: "Signin"
   });
 };
 
@@ -18,8 +30,37 @@ exports.signup = function(req, res) {
   });
 };
 
-exports.onboarding = function(req, res) {
+exports.onboarding_1 = function(req, res) {
   return res.render("onboarding", {
-    title: "Spyre"
+    title: "Spyre",
+    step: 1
+  });
+};
+
+exports.onboarding_2 = function(req, res) {
+  return res.render("onboarding", {
+    title: "Spyre",
+    step: 2
+  });
+};
+
+exports.onboarding_3 = function(req, res) {
+  return res.render("onboarding", {
+    title: "Spyre",
+    step: 3
+  });
+};
+
+exports.onboarding_4 = function(req, res) {
+  return res.render("onboarding", {
+    title: "Spyre",
+    step: 4
+  });
+};
+
+exports.onboarding_5 = function(req, res) {
+  return res.render("onboarding", {
+    title: "Spyre",
+    step: 5
   });
 };

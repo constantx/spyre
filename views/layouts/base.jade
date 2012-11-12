@@ -31,13 +31,13 @@ html
       nav.bar-tab
         ul.tab-inner
           li.tab-item.active
-            a(href='')
+            a(href='/home')
               img.tab-icon(src='/img/icon-home.png')
           li.tab-item
-            a(href='')
+            a(href='/stats')
               img.tab-icon(src='/img/icon-stats.png')
           li.tab-item
-            a(href='')
+            a(href='/settings')
               img.tab-icon(src='/img/icon-settings.png')
 
     //- script(type='text/javascript', src='/cordova-2.1.0.min.js')
@@ -48,6 +48,7 @@ html
     
     //- view
     script(type='text/javascript', src='/js/AppView.js')
+    script(type='text/javascript', src='/js/BarTabView.js')
       
     //- component
     script(type='text/javascript', src='/components/ratchet.js')

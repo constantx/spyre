@@ -1,4 +1,4 @@
-extends layout
+extends layouts/base
 
 block bar-title-center
   h1.title= title
@@ -15,13 +15,13 @@ block content
       #signup
         h1 Sign up
         #via-social
-          a.button via Facebook
+          a.button(href='/onboarding/1') via Facebook
           &nbsp;
-          a.button via Twitter
+          a.button(href='/onboarding/1') via Twitter
         #via-email
           #via-or or with your email
           form
             input(type='text', placeholder='email')
             input(type='password', placeholder='and password')
             input(type='password', placeholder='confirm password')
-            a.button.button-block(href='/onboarding', data-transition='slide-in') Sign up
+            a.button.button-block(href='/onboarding/1', data-transition='slide-in') Sign up
