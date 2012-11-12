@@ -5,10 +5,9 @@
 
 @import "compass/reset";
 @import "compass/css3";
-@import "compass/utilities/general/clearfix";
-@import "compass/utilities/general/min";
+
+@import "../components/ratchet.scss";
 
 @import 'var';
-@import "ratchet";
 @import "override";
 @import 'base';

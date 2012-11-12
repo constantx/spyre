@@ -18,5 +18,5 @@
 
 "use strict"
 
-window.addEventListener 'push', ->
-  window.alert('hello world')
+$(window).on 'load', ->
+  new window.FingerBlast('#app-container')

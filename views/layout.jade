@@ -16,7 +16,7 @@ html
     link(rel='stylesheet', type='text/css', href='/css/main.css')
     
     title #{title}
-  body
+  body#app-container
     block bar-title
       header.bar-title
         block bar-title-left
@@ -40,6 +40,13 @@ html
             a(href='')
               img.tab-icon(src='/img/icon-settings.png')
 
-    script(type='text/javascript', src='/cordova-2.1.0.js')
-    script(type='text/javascript', src='/js/libs/ratchet.min.js')
+    //- script(type='text/javascript', src='/cordova-2.1.0.min.js')
+    script(type='text/javascript', src='/js/libs/jquery-1.8.0.min.js')
+    script(type='text/javascript', src='/js/libs/fingerblast.js')
+    
+    //- component
+    script(type='text/javascript', src='/components/ratchet.js')
+
+
+    //- main script
     script(type='text/javascript', src='/js/main.js')
