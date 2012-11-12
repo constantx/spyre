@@ -6,8 +6,11 @@ block bar-title-center
 block bar-title-right
   a.button(href='/signin', data-transition='slide-in') Sign in
 
+//- no bar tab on signup page
+block bar-tab
+
 block content
-  #welcome
+  #signup-step1
     .content-padded
       #signup
         h1 Sign up
@@ -21,4 +24,4 @@ block content
             input(type='text', placeholder='email')
             input(type='password', placeholder='and password')
             input(type='password', placeholder='confirm password')
-            a.button.button-block(href='/signup/step2.html', data-transition='slide-in') Confirm
+            a.button.button-block(href='/onboarding', data-transition='slide-in') Sign up

@@ -1,0 +1,22 @@
+extends layout
+
+block bar-title-center
+  h1.title= title
+
+//- no bar tab on signup page
+block bar-tab
+
+block content
+  #signin
+    .content-padded
+      #signin
+        h1 Sign in
+        br
+        #via-email
+          form
+            input(type='text', placeholder='email')
+            input(type='password', placeholder='and password')
+            a(href='/forgot', data-transition='slide-in') forgot password?
+            br
+            br
+            a.button-main.button-block(href='/home', data-transition='slide-in') Sign in

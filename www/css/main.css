@@ -1207,6 +1207,10 @@ select {
   -webkit-user-select: text;
   /* prevent copy paste, to allow, change 'none' to 'text' */ }
 
+.content-padded h1 {
+  font-size: 2em;
+  line-height: 1.5em; }
+
 #signup h1 {
   margin: 0 0 0.2em;
   font-size: 2em;

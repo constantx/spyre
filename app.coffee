@@ -4,7 +4,6 @@ Module dependencies.
 ###
 express = require("express")
 routes = require("./routes")
-user = require("./routes/user")
 http = require("http")
 path = require("path")
 app = express()
@@ -23,11 +22,11 @@ app.configure ->
 app.configure "development", ->
   app.use express.errorHandler()
 
-app.get "/",                routes.signup_step1
-app.get "/signup/step1*",   routes.signup_step1
-app.get "/signup/step2*",   routes.signup_step2
-
-app.get "/users", user.list
+app.get "/",                routes.signup
+app.get "/signup",          routes.signup
+app.get "/onboarding",      routes.onboarding
+app.get "/signin*",         routes.signin
+app.get "/home",            routes.home
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")

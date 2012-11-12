@@ -1,10 +1,18 @@
 #
 # * GET home page.
 # 
-exports.signup_step1 = (req, res) ->
-  res.render "signup_step1",
+exports.home = (req, res) ->
+  res.render "home",
     title: "Spyre"
 
-exports.signup_step2 = (req, res) ->
-  res.render "signup_step2",
+exports.signin = (req, res) ->
+  res.render "signin",
+    title: "Spyre"
+
+exports.signup = (req, res) ->
+  res.render "signup",
+    title: "Spyre"
+
+exports.onboarding = (req, res) ->
+  res.render "onboarding",
     title: "Spyre"

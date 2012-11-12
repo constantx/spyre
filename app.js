@@ -3,13 +3,11 @@
 Module dependencies.
 */
 
-var app, express, http, path, routes, user;
+var app, express, http, path, routes;
 
 express = require("express");
 
 routes = require("./routes");
-
-user = require("./routes/user");
 
 http = require("http");
 
@@ -33,13 +31,15 @@ app.configure("development", function() {
   return app.use(express.errorHandler());
 });
 
-app.get("/", routes.signup_step1);
+app.get("/", routes.signup);
 
-app.get("/signup/step1*", routes.signup_step1);
+app.get("/signup", routes.signup);
 
-app.get("/signup/step2*", routes.signup_step2);
+app.get("/onboarding", routes.onboarding);
 
-app.get("/users", user.list);
+app.get("/signin*", routes.signin);
+
+app.get("/home", routes.home);
 
 http.createServer(app).listen(app.get("port"), function() {
   return console.log("Express server listening on port " + app.get("port"));
