@@ -31,13 +31,13 @@ html
       nav.bar-tab
         ul.tab-inner
           li.tab-item.active
-            a(href='/home')
+            a(href='/home', data-transition='slide-out')
               img.tab-icon(src='/img/icon-home.png')
           li.tab-item
-            a(href='/stats')
+            a(href='/stats', data-transition='slide-in')
               img.tab-icon(src='/img/icon-stats.png')
           li.tab-item
-            a(href='/settings')
+            a(href='/settings', data-transition='slide-in')
               img.tab-icon(src='/img/icon-settings.png')
 
     //- script(type='text/javascript', src='/cordova-2.1.0.min.js')

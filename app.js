@@ -45,6 +45,10 @@ app.get("/signin", routes.signin);
 
 app.get("/craving", routes.craving);
 
+app.get("/craving_smoke", routes.craving_smoke);
+
+app.get("/craving_not_smoke", routes.craving_not_smoke);
+
 app.get("/distraction", routes.distraction);
 
 app.get("/onboarding", routes.onboarding_1);
