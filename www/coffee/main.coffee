@@ -2,11 +2,17 @@
 
 (->
   $(document).ready ->
-    window.Spyre = {}
-    window.Ev = _.extend({},Backbone.Events)
+    # init event watcher
+    window.Ev = _.extend {}, Backbone.Events
+    
+    # main app model
+    window.Spyre = new window.SpyreApp()
 
-    appView = new window.AppView()
-    tabBarView = new window.BarTabView()
+    # main app view
+    appView = new window.AppView
+      model: window.Spyre
 
+    # simulate touch with click event
+    fingerBlast = new window.FingerBlast(appView.el)
     @
 )();
