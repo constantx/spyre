@@ -8,13 +8,13 @@ exports.home = function(req, res) {
 
 exports.stats = function(req, res) {
   return res.render("stats", {
-    title: "stats"
+    title: "Spyre"
   });
 };
 
 exports.settings = function(req, res) {
   return res.render("settings", {
-    title: "settings"
+    title: "Spyre"
   });
 };
 
@@ -26,65 +26,65 @@ exports.signin = function(req, res) {
 
 exports.signup = function(req, res) {
   return res.render("signup", {
-    title: "spyre"
+    title: "Spyre"
   });
 };
 
 exports.craving = function(req, res) {
   return res.render("craving", {
-    title: "craving"
+    title: "Spyre"
   });
 };
 
 exports.craving_smoke = function(req, res) {
   return res.render("craving_smoke", {
-    title: "spyre"
+    title: "Spyre"
   });
 };
 
 exports.craving_not_smoke = function(req, res) {
   return res.render("craving_not_smoke", {
-    title: "spyre"
+    title: "Spyre"
   });
 };
 
 exports.distraction = function(req, res) {
   return res.render("distraction", {
-    title: "spyre"
+    title: "Spyre"
   });
 };
 
 exports.onboarding_1 = function(req, res) {
   return res.render("onboarding", {
-    title: "spyre",
+    title: "Spyre",
     step: 1
   });
 };
 
 exports.onboarding_2 = function(req, res) {
   return res.render("onboarding", {
-    title: "spyre",
+    title: "Spyre",
     step: 2
   });
 };
 
 exports.onboarding_3 = function(req, res) {
   return res.render("onboarding", {
-    title: "spyre",
+    title: "Spyre",
     step: 3
   });
 };
 
 exports.onboarding_4 = function(req, res) {
   return res.render("onboarding", {
-    title: "spyre",
+    title: "Spyre",
     step: 4
   });
 };
 
 exports.onboarding_5 = function(req, res) {
   return res.render("onboarding", {
-    title: "spyre",
+    title: "Spyre",
     step: 5
   });
 };
