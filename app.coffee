@@ -3,10 +3,10 @@
 Module dependencies.
 ###
 express = require("express")
-routes = require("./routes")
-http = require("http")
-path = require("path")
-app = express()
+routes  = require("./routes")
+http    = require("http")
+path    = require("path")
+app     = express()
 
 app.configure ->
   app.set "port", process.env.PORT or 3000
@@ -28,6 +28,8 @@ app.get "/stats",           routes.stats
 app.get "/settings",        routes.settings
 app.get "/signup",          routes.signup
 app.get "/signin",          routes.signin
+app.get "/craving",         routes.craving
+app.get "/distraction",     routes.distraction
 
 app.get "/onboarding",      routes.onboarding_1
 app.get "/onboarding/1",    routes.onboarding_1

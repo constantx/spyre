@@ -30,6 +30,18 @@ exports.signup = function(req, res) {
   });
 };
 
+exports.craving = function(req, res) {
+  return res.render("craving", {
+    title: "Spyre"
+  });
+};
+
+exports.distraction = function(req, res) {
+  return res.render("distraction", {
+    title: "Spyre"
+  });
+};
+
 exports.onboarding_1 = function(req, res) {
   return res.render("onboarding", {
     title: "Spyre",

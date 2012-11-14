@@ -43,6 +43,10 @@ app.get("/signup", routes.signup);
 
 app.get("/signin", routes.signin);
 
+app.get("/craving", routes.craving);
+
+app.get("/distraction", routes.distraction);
+
 app.get("/onboarding", routes.onboarding_1);
 
 app.get("/onboarding/1", routes.onboarding_1);

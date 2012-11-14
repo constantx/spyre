@@ -21,6 +21,14 @@ exports.signup = (req, res) ->
   res.render "signup",
     title: "Spyre"
 
+exports.craving = (req, res) ->
+  res.render "craving",
+    title: "Spyre"
+
+exports.distraction = (req, res) ->
+  res.render "distraction",
+    title: "Spyre"
+
 exports.onboarding_1 = (req, res) ->
   res.render "onboarding",
     title: "Spyre"
