@@ -1,16 +1,17 @@
-###jshint devel:true ###
+###jshint devel:true###
 ###global Backbone:true, $:true###
 
-AppView = Backbone.View.extend
+SpyreAppView = Backbone.View.extend
 
   el: $('#app-container')
+
+  events:
+    "push" : "is_pushed"
   
   initialize: ->
+    self = @
     # init views
     barTabView = new window.BarTabView()
-
-    # get ratchet's push.js callback
-    window.addEventListener 'push', @pushedTo
 
     # get location and store in model
     @getLocation()
@@ -33,6 +34,9 @@ AppView = Backbone.View.extend
     else
       noLocation "not supported"
 
-  pushedTo: =>
-    console.log @.model
+    @
+
+  is_pushed: ->
+    console.log 'is_pushed'
+    console.log @model
     @

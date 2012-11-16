@@ -1,4 +1,13 @@
+.tab-item{
+  a{
+    display: block;
+    height: 100%;
+  }
+}
+
 .tab-icon{
+  position: static !important;
+  padding: 0;
   width: 35px;
   height: 35px;
 }

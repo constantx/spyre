@@ -1899,7 +1899,13 @@ ul.icons {
 .icon-user-md:before {
   content: "\f200"; }
 
+.tab-item a {
+  display: block;
+  height: 100%; }
+
 .tab-icon {
+  position: static !important;
+  padding: 0;
   width: 35px;
   height: 35px; }
 
@@ -1909,7 +1915,6 @@ ul.icons {
   width: 40%; }
 
 .tab-item a {
-  display: block;
   color: #fffffa; }
 .tab-item .tab-icon {
   font-size: 2em; }

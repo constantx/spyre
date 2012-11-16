@@ -1,13 +1,15 @@
 ###global Backbone:true, $:true###
+###jshint devel:true###
 
 BarTabView = Backbone.View.extend
 
   el: $('.bar-tab')
 
   events:
-    'click' : "update"
-  
+    'touch .tab-item' : "activate"
+
   initialize: ->
     @
 
-  update: ->
+  activate: ->
+    @
