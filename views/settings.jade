@@ -6,6 +6,17 @@ block bar-title-center
 block bar-title-right
   a.button(href='/signout', data-transition='slide-in') Sign out
 
+block bar-tab-inner
+  li.tab-item
+    a(href='/home', data-transition='fade')
+      i.tab-icon.icon-home
+  li.tab-item
+    a(href='/stats', data-transition='fade')
+      i.tab-icon.icon-bar-chart
+  li.tab-item.active
+    a(href='/settings', data-transition='fade')
+      i.tab-icon.icon-cog
+
 block content
   #stats
     .content-padded
