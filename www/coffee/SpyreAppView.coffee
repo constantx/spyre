@@ -37,4 +37,5 @@ SpyreAppView = Backbone.View.extend
     @
 
   is_pushed: ->
+    
     @
