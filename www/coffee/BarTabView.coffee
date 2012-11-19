@@ -5,9 +5,6 @@ BarTabView = Backbone.View.extend
 
   el: $('.bar-tab')
 
-  events:
-    'touch .tab-item' : "activate"
-
   initialize: ->
     @
 

@@ -37,6 +37,4 @@ SpyreAppView = Backbone.View.extend
     @
 
   is_pushed: ->
-    console.log 'is_pushed'
-    console.log @model
     @
