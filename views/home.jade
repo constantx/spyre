@@ -4,15 +4,7 @@ block bar-title-center
   h1.title= title
 
 block bar-tab-inner
-  li.tab-item.active
-    a(href='/home', data-transition='fade')
-      i.tab-icon.icon-home
-  li.tab-item
-    a(href='/stats', data-transition='fade')
-      i.tab-icon.icon-bar-chart
-  li.tab-item
-    a(href='/settings', data-transition='fade')
-      i.tab-icon.icon-cog
+  mixin bar-tab('home')
 
 block content
   .content-padded

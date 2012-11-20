@@ -1,3 +1,6 @@
+//- include mixins
+include ../mixins/_bar-tab
+
 !!! 5
 html
   head
@@ -31,15 +34,11 @@ html
       nav.bar-tab
         ul.tab-inner
           block bar-tab-inner
-            li.tab-item.active
-              a(href='/home', data-transition='slide-out')
-                i.tab-icon.icon-home
-            li.tab-item
-              a(href='/stats', data-transition='fade')
-                i.tab-icon.icon-bar-chart
-            li.tab-item
-              a(href='/settings', data-transition='fade')
-                i.tab-icon.icon-cog
+            mixin bar-tab('home')
+
+    script(type="text/javascript", src="//use.typekit.net/nkl3dpr.js")
+    script
+      try{Typekit.load();}catch(e){}
 
     //- script(type='text/javascript', src='/cordova-2.1.0.min.js')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')

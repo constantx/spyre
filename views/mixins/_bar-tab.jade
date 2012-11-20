@@ -1,0 +1,27 @@
+mixin bar-tab(page)
+  if page == 'home'
+    li.tab-item.active
+      a(href='/home', data-transition='fade')
+        i.tab-icon.icon-home
+  else
+    li.tab-item
+      a(href='/home', data-transition='fade')
+        i.tab-icon.icon-home
+
+  if page == 'stats'
+    li.tab-item.active
+      a(href='/stats', data-transition='fade')
+        i.tab-icon.icon-bar-chart
+  else
+    li.tab-item
+      a(href='/stats', data-transition='fade')
+        i.tab-icon.icon-bar-chart
+
+  if page == 'settings'
+    li.tab-item.active
+      a(href='/settings', data-transition='fade')
+        i.tab-icon.icon-cog
+  else
+    li.tab-item
+      a(href='/settings', data-transition='fade')
+        i.tab-icon.icon-cog

@@ -1,6 +1,6 @@
 *.coffee
-./package.json
-./Profile
-www/*
+*.jade
 .git
-.sass-cache
+package.json
+Profile
+www/*

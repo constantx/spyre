@@ -7,15 +7,7 @@ block bar-title-right
   a.button(href='/signup', data-transition='fade') Sign out
 
 block bar-tab-inner
-  li.tab-item
-    a(href='/home', data-transition='fade')
-      i.tab-icon.icon-home
-  li.tab-item
-    a(href='/stats', data-transition='fade')
-      i.tab-icon.icon-bar-chart
-  li.tab-item.active
-    a(href='/settings', data-transition='fade')
-      i.tab-icon.icon-cog
+  mixin bar-tab('settings')
 
 block content
   #stats
