@@ -1,1954 +1,1212 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline; }
 
-html {
-  line-height: 1; }
+/* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/node_modules/stylus/lib/functions/index.styl */
 
-ol, ul {
-  list-style: none; }
+/* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/main.styl */
+@import "ratchet.css";
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+/* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_var.styl */
 
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
+/* line 8 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 
-q, blockquote {
-  quotes: none; }
-  q:before, q:after, blockquote:before, blockquote:after {
-    content: "";
-    content: none; }
-
-a img {
-  border: none; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block; }
-
-/**
- * ==================================
- * Ratchet v1.0.0
- * Licensed under The MIT License
- * http://opensource.org/licenses/MIT
- * ==================================
- */
-/* Hard reset
--------------------------------------------------- */
-html,
-body,
-div,
-span,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-section,
-summary,
-time,
-audio,
-video {
-  padding: 0;
-  margin: 0;
-  border: 0; }
-
-/* Prevents iOS text size adjust after orientation change, without disabling (Thanks to @necolas) */
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
-
-/* Base styles
--------------------------------------------------- */
-body {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font: 14px/1.25 "Helvetica Neue", sans-serif;
-  color: #222;
-  background-color: #fff; }
-
-/* Universal link styling */
-a {
-  color: #0882f0;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* Removes the dark touch outlines on links */ }
-
-/* Wrapper to be used around all content not in .bar-title and .bar-tab */
-.content {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  background: #fff;
-  -webkit-transition-property: top, bottom;
-  transition-property: top, bottom;
-  -webkit-transition-duration: .2s, .2s;
-  transition-duration: .2s, .2s;
-  -webkit-transition-timing-function: linear, linear;
-  transition-timing-function: linear, linear;
-  -webkit-overflow-scrolling: touch; }
-
-/* Hack to force all relatively and absolutely positioned elements still render while scrolling
-   Note: This is a bug for "-webkit-overflow-scrolling: touch" */
-.content > * {
-  -webkit-transform: translateZ(0px);
-  transform: translateZ(0px); }
-
-/* Utility wrapper to pad in components like forms, block buttons and segmented-controllers so they're not full-bleed */
-.content-padded {
-  padding: 10px; }
-
-/* Pad top/bottom of content so it doesn't hide behind .bar-title and .bar-tab.
-   Note: For these to work, content must come after both bars in the markup */
-.bar-title ~ .content {
-  top: 44px; }
-
-.bar-tab ~ .content {
-  bottom: 51px; }
-
-.bar-header-secondary ~ .content {
-  top: 88px; }
-
- /* General bar styles
--------------------------------------------------- */
-[class*="bar-"] {
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 10;
-  height: 44px;
-  padding: 5px;
-  box-sizing: border-box; }
-
-/* Modifier class to dock any bar below .bar-title */
-.bar-header-secondary {
-  top: 45px; }
-
-/* Modifier class to dock any bar to bottom of viewport */
-.bar-footer {
-  bottom: 0; }
-
-/* Generic bar for wrapping buttons, segmented controllers, etc. */
-.bar-standard {
-  background-color: #f2f2f2;
-  background-image: -webkit-linear-gradient(top, #f2f2f2 0, #e5e5e5 100%);
-  background-image: linear-gradient(to bottom, #f2f2f2 0%, #e5e5e5 100%);
-  border-bottom: 1px solid #aaa;
-  box-shadow: inset 0 1px 1px -1px white; }
-
-/* Flip border position to top for footer bars */
-.bar-footer.bar-standard,
-.bar-footer-secondary.bar-standard {
-  border-top: 1px solid #aaa;
-  border-bottom-width: 0; }
-
-/* Title bar
--------------------------------------------------- */
-/* Bar docked to top of viewport for showing page title and actions */
-.bar-title {
-  top: 0;
-  display: -webkit-box;
-  display: box;
-  background-color: #1eb0e9;
-  background-image: -webkit-linear-gradient(top, #1eb0e9 0, #109adc 100%);
-  background-image: linear-gradient(to bottom, #1eb0e9 0%, #109adc 100%);
-  border-bottom: 1px solid #0e5895;
-  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, 0.8);
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal; }
-
-/* Centered text in the .bar-title */
-.bar-title .title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 44px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
-  white-space: nowrap; }
-
-.bar-title > a:not([class*="button"]) {
-  display: block;
-  width: 100%;
-  height: 100%; }
-
-/* Retain specified title color */
-.bar-title .title a {
-  color: inherit; }
-
-/* Tab bar
--------------------------------------------------- */
-/* Bar docked to bottom used for primary app navigation */
-.bar-tab {
-  bottom: 0;
-  height: 50px;
-  padding: 0;
-  background-color: #393939;
-  background-image: -webkit-linear-gradient(top, #393939 0, #2b2b2b 100%);
-  background-image: linear-gradient(to bottom, #393939 0%, #2b2b2b 100%);
-  border-top: 1px solid #000;
-  border-bottom-width: 0;
-  box-shadow: inset 0 1px 1px -1px rgba(255, 255, 255, 0.6); }
-
-/* Wrapper for individual tab */
-.tab-inner {
-  display: -webkit-box;
-  display: box;
-  height: 100%;
-  list-style: none;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal; }
-
-/* Navigational tab */
-.tab-item {
-  height: 100%;
-  padding-top: 9px;
-  text-align: center;
-  box-sizing: border-box;
-  -webkit-box-flex: 1;
-  box-flex: 1; }
-
-/* Active state for tab */
-.tab-item.active {
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); }
-
-/* Icon for tab  */
-.tab-icon {
-  display: block;
-  height: 18px;
-  margin: 0 auto; }
-
-/* Label for tab */
-.tab-label {
-  margin-top: 1px;
-  font-size: 10px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3); }
-
-/* Buttons in title bars
--------------------------------------------------- */
-/* Generic style for all buttons in .bar-title */
-.bar-title [class*="button"] {
-  position: relative;
-  z-index: 10;
-  /* Places buttons over full width title */
-  font-size: 12px;
-  line-height: 23px;
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  background-color: #1eb0e9;
-  background-image: -webkit-linear-gradient(top, #1eb0e9 0, #0984c6 100%);
-  background-image: linear-gradient(to bottom, #1eb0e9 0%, #0984c6 100%);
-  border: 1px solid #0e5895;
-  box-shadow: 0 1px rgba(255, 255, 255, 0.25);
-  -webkit-box-flex: 0;
-  box-flex: 0; }
-
-/* Hacky way to right align buttons outside of flex-box system
-   Note: is only absolutely positioned button, would be better if flex-box had an "align right" option */
-.bar-title .title + [class*="button"]:last-child,
-.bar-title .button + [class*="button"]:last-child,
-.bar-title [class*="button"].pull-right {
-  position: absolute;
-  top: 5px;
-  right: 5px; }
-
-/* Override standard button active states */
-.bar-title .button:active {
-  color: #fff;
-  background-color: #0876b1; }
-
-/* Directional buttons in title bars (thanks to @GregorAdams for solution - http://cssnerd.com/2011/11/30/the-best-pure-css3-ios-style-arrow-back-button/)
--------------------------------------------------- */
-/* Add relative positioning so :before content is positioned properly */
-.bar-title .button-prev,
-.bar-title .button-next {
-  position: relative; }
-
-/* Prev/next button base styles */
-.bar-title .button-prev {
-  margin-left: 7px;
-  /* Push over to make room for :before content */
-  border-left: 0;
-  border-bottom-left-radius: 10px 15px;
-  border-top-left-radius: 10px 15px; }
-
-.bar-title .button-next {
-  margin-right: 7px;
-  /* Push over to make room for :before content */
-  border-right: 0;
-  border-top-right-radius: 10px 15px;
-  border-bottom-right-radius: 10px 15px; }
-
-/* Pointed part of directional button */
-.bar-title .button-prev:before,
-.bar-title .button-next:before {
-  position: absolute;
-  top: 2px;
-  width: 27px;
-  height: 27px;
-  border-radius: 30px 100px 2px 40px/2px 40px 30px 100px;
-  content: '';
-  box-shadow: inset 1px 0 #0e5895, inset 0 1px #0e5895;
-  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(black), color-stop(0.33, black), color-stop(0.5, transparent), to(transparent));
-  mask-image: gradient(linear, left top, right bottom, from(black), color-stop(0.33, black), color-stop(0.5, transparent), to(transparent)); }
-
-.bar-title .button-prev:before {
-  left: -5px;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#0984c6), to(#1eb0e9));
-  background-image: gradient(linear, left bottom, right top, from(#0984c6), to(#1eb0e9));
-  border-left: 1.5px solid rgba(255, 255, 255, 0.25);
-  -webkit-transform: rotate(-45deg) skew(-10deg, -10deg);
-  transform: rotate(-45deg) skew(-10deg, -10deg); }
-
-.bar-title .button-next:before {
-  right: -5px;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#1eb0e9), to(#0984c6));
-  background-image: gradient(linear, left bottom, right top, from(#1eb0e9), to(#0984c6));
-  border-top: 1.5px solid rgba(255, 255, 255, 0.25);
-  -webkit-transform: rotate(135deg) skew(-10deg, -10deg);
-  transform: rotate(135deg) skew(-10deg, -10deg); }
-
-/* Active states for the directional buttons */
-.bar-title .button-prev:active,
-.bar-title .button-next:active,
-.bar-title .button-prev:active:before,
-.bar-title .button-next:active:before {
-  color: #fff;
-  background-color: #0876b1;
-  background-image: none; }
-
-.bar-title .button-prev:active:before,
-.bar-title .button-next:active:before {
-  content: ''; }
-
-.bar-title .button-prev:active:before {
-  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2); }
-
-.bar-title .button-next:active:before {
-  box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.2); }
-
-/* Block buttons in any bar
--------------------------------------------------- */
-/* Add proper padding and replace buttons normal dropshadow with a shine from bar */
-[class*="bar"] .button-block {
-  padding: 7px 0;
-  margin-bottom: 0;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px rgba(255, 255, 255, 0.8); }
-
-/* Override standard padding changes for .button-blocks */
-[class*="bar"] .button-block:active {
-  padding: 7px 0; }
-
-/* Segmented controller in any bar
--------------------------------------------------- */
-/* Remove standard segmented bottom margin */
-[class*="bar-"] .segmented-controller {
-  margin-bottom: 0; }
-
-/* Add margins between segmented controllers and buttons */
-[class*="bar-"] .segmented-controller + [class*="button"],
-[class*="bar-"] [class*="button"] + .segmented-controller {
-  margin-left: 5px; }
-
-/* Segmented controller in a title bar
--------------------------------------------------- */
-.bar-title .segmented-controller {
-  line-height: 18px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  background-color: #1eb0e9;
-  background-image: -webkit-linear-gradient(top, #1eb0e9 0, #0984c6 100%);
-  background-image: linear-gradient(to bottom, #1eb0e9 0%, #0984c6 100%);
-  border: 1px solid #0e5895;
-  border-radius: 3px;
-  box-shadow: 0 1px rgba(255, 255, 255, 0.25);
-  -webkit-box-flex: 1;
-  box-flex: 1; }
-
-/* Set color for tab border and highlight */
-.bar-title .segmented-controller li {
-  border-left: 1px solid #0e5895;
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.25); }
-
-/* Remove inset shadow from first tab or one to the right of the active tab  */
-.bar-title .segmented-controller .active + li,
-.bar-title .segmented-controller li:first-child {
-  box-shadow: none; }
-
-/* Remove left-hand border from first tab */
-.bar-title .segmented-controller li:first-child {
-  border-left-width: 0; }
-
-/* Depressed state (active) */
-.bar-title .segmented-controller li.active {
-  background-color: #0082c4;
-  box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.3); }
-
-/* Set color of links to white */
-.bar-title .segmented-controller li > a {
-  color: #fff; }
-
-/* Search forms in standard bar
--------------------------------------------------- */
-/* Position/size search bar within the bar */
-.bar-standard input[type=search] {
-  height: 32px;
-  margin: 0; }
-
- /* Lists
--------------------------------------------------- */
-/* Remove usual bullet styles from list */
-.list {
-  margin-bottom: 10px;
-  list-style: none;
-  background-color: #fff; }
-
-/* Pad each list item and add dividers */
-.list li {
-  position: relative;
-  padding: 20px 60px 20px 10px;
-  /* Given extra right padding to accomodate counts, chevrons or buttons */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-
-/* Give top border to first list items */
-.list li:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
-/* If a list of links, make sure the child <a> takes up full list item tap area (want to avoid selecting child buttons though) */
-.list li > a:not([class*="button"]) {
-  position: relative;
-  display: block;
-  padding: inherit;
-  margin: -20px -60px -20px -10px;
-  color: inherit; }
-
-/* Inset list
--------------------------------------------------- */
-.list.inset {
-  width: auto;
-  margin-right: 10px;
-  margin-left: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  box-sizing: border-box; }
-
-/* Remove border from first/last standard list items to avoid double border at top/bottom of lists */
-.list.inset li:first-child {
-  border-top-width: 0; }
-
-.list.inset li:last-child {
-  border-bottom-width: 0; }
-
-/* List dividers
--------------------------------------------------- */
-.list .list-divider {
-  position: relative;
-  top: -1px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 18px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(top, #f8f8f8 0, #eeeeee 100%);
-  background-image: linear-gradient(to bottom, #f8f8f8 0%, #eeeeee 100%);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4); }
-
-/* Rounding first divider on inset lists and remove border on the top */
-.list.inset .list-divider:first-child {
-  top: 0;
-  border-top-width: 0;
-  border-radius: 6px 6px 0 0; }
-
-/* Rounding last divider on inset lists */
-.list.inset .list-divider:last-child {
-  border-radius: 0 0 6px 6px; }
-
-/* Right-aligned subcontent in lists (chevrons, buttons, counts and toggles)
--------------------------------------------------- */
-.list .chevron,
-.list [class*="button"],
-.list [class*="count"],
-.list .toggle {
-  position: absolute;
-  top: 50%;
-  right: 10px; }
-
-/* Position chevrons/counts vertically centered on the right in list items */
-.list .chevron,
-.list [class*="count"] {
-  margin-top: -10px;
-  /* Half height of chevron */ }
-
-/* Push count over if there's a sibling chevron */
-.list .chevron + [class*="count"] {
-  right: 30px; }
-
-/* Position buttons vertically centered on the right in list items */
-.list [class*="button"] {
-  left: auto;
-  margin-top: -14px;
-  /* Half height of button */ }
-
-.list .toggle {
-  margin-top: -15px;
-  /* Half height of toggle */ }
-
- /* Forms
--------------------------------------------------- */
-/* Force form elements to inherit font styles */
-input,
-textarea,
-button,
-select {
-  font-family: inherit;
-  font-size: inherit; }
-
-/* Stretch inputs/textareas to full width and add height to maintain a consistent baseline */
-select,
-textarea,
-input[type="text"],
-input[type=search],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="tel"],
-input[type="color"],
-.input-group {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.1);
-  -webkit-appearance: none;
-  box-sizing: border-box; }
-
-/* Fully round search input */
-input[type=search] {
-  height: 34px;
-  font-size: 14px;
-  border-radius: 30px; }
-
-/* Allow text area's height to grow larger than a normal input */
-textarea {
-  height: auto; }
-
-/* Style select button to look like part of the Ratchet's style */
-select {
-  height: auto;
-  font-size: 14px;
-  background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(top, #f8f8f8 0%, #d4d4d4 100%);
-  background-image: linear-gradient(to bottom, #f8f8f8 0%, #d4d4d4 100%);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1); }
-
-/* Input groups (cluster multiple inputs together into a single group)
--------------------------------------------------- */
-/* Reset from initial form setup styles */
-.input-group {
-  width: auto;
-  height: auto;
-  padding: 0; }
-
-/* Remove spacing, borders, shadows and rounding since it all belongs on the .input-group not the input */
-.input-group input {
-  margin-bottom: 0;
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0;
-  box-shadow: none; }
-
-/* Remove bottom border on last input to avoid double bottom border */
-.input-group input:last-child {
-  border-bottom-width: 0; }
-
-/* Input groups with labels
--------------------------------------------------- */
-/* To use labels with input groups, wrap a label and an input in an .input-row */
-.input-row {
-  overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-
-/* Remove bottom border on last input-row to avoid double bottom border */
-.input-row:last-child {
-  border-bottom-width: 0; }
-
-/* Labels get floated left with a set percentage width */
-.input-row label {
-  float: left;
-  width: 25%;
-  padding: 11px 10px 9px 13px;
-  /* Optimizing the baseline for mobile. */
-  font-weight: bold; }
-
-/* Actual inputs float to right of labels and also have a set percentage */
-.input-row label + input {
-  float: right;
-  width: 65%;
-  padding-left: 0;
-  margin-bottom: 0;
-  border-bottom: 0; }
-
- /* General button styles
--------------------------------------------------- */
-[class*="button"] {
-  position: relative;
-  display: inline-block;
-  padding: 4px 12px;
-  margin: 0;
-  font-weight: bold;
-  line-height: 18px;
-  color: #333;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  vertical-align: top;
-  cursor: pointer;
-  background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(top, #f8f8f8 0, #d4d4d4 100%);
-  background-image: linear-gradient(to bottom, #f8f8f8 0%, #d4d4d4 100%);
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.05); }
-
-/* Active */
-[class*="button"]:active {
-  padding-top: 5px;
-  padding-bottom: 3px;
-  color: #333;
-  background-color: #ccc;
-  background-image: none;
-  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2); }
-
-/* Button modifiers
--------------------------------------------------- */
-/* Overriding styles for buttons with modifiers  */
-.button-main,
-.button-positive,
-.button-negative {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); }
-
-/* Main button */
-.button-main {
-  background-color: #1eafe7;
-  background-image: -webkit-linear-gradient(top, #1eafe7 0, #1a97c8 100%);
-  background-image: linear-gradient(to bottom, #1eafe7 0%, #1a97c8 100%);
-  border: 1px solid #117aaa; }
-
-/* Positive button  */
-.button-positive {
-  background-color: #34ba15;
-  background-image: -webkit-linear-gradient(top, #34ba15 0, #2da012 100%);
-  background-image: linear-gradient(to bottom, #34ba15 0%, #2da012 100%);
-  border: 1px solid #278f0f; }
-
-/* Negative button  */
-.button-negative {
-  background-color: #e71e1e;
-  background-image: -webkit-linear-gradient(top, #e71e1e 0, #c71a1a 100%);
-  background-image: linear-gradient(to bottom, #e71e1e 0%, #c71a1a 100%);
-  border: 1px solid #b51a1a; }
-
-/* Active state for buttons with modifiers */
-.button-main:active,
-.button-positive:active,
-.button-negative:active {
-  color: #fff; }
-
-.button-main:active {
-  background-color: #0876b1; }
-
-.button-positive:active {
-  background-color: #298f11; }
-
-.button-negative:active {
-  background-color: #b21a1a; }
-
-/* Block level buttons (full width buttons) */
-.button-block {
-  display: block;
-  padding: 11px 0 13px;
-  margin-bottom: 10px;
-  font-size: 16px; }
-
-/* Active state for block level buttons */
-.button-block:active {
-  padding: 12px 0; }
-
-/* Counts in buttons
--------------------------------------------------- */
-/* Generic styles for all counts within buttons */
-[class*="button"] [class*="count"] {
-  padding-top: 2px;
-  padding-bottom: 2px;
-  margin-right: -4px;
-  margin-left: 4px;
-  text-shadow: none;
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 1px -1px black, 0 1px 1px -1px white; }
-
-/* Position counts within block level buttons
-   Note: These are absolutely positioned so that text of button isn't "pushed" by count and always
-   stays at true center of button */
-.button-block [class*="count"] {
-  position: absolute;
-  right: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  margin-right: 10px; }
-
- /* Chevrons
--------------------------------------------------- */
-.chevron {
-  display: block;
-  height: 20px; }
-
-/* Base styles for both 1/2's of the chevron */
-.chevron:before,
-.chevron:after {
-  position: relative;
-  display: block;
-  width: 12px;
-  height: 4px;
-  background-color: #999;
-  content: ''; }
-
-/* Position and rotate respective 1/2's of the chevron */
-.chevron:before {
-  top: 5px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg); }
-
-.chevron:after {
-  top: 7px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
-
- /* General count styles
--------------------------------------------------- */
-[class*="count"] {
-  display: inline-block;
-  padding: 4px 9px;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 100px; }
-
-/* Count modifiers
--------------------------------------------------- */
-/* Overriding styles for counts with modifiers  */
-.count-main,
-.count-positive,
-.count-negative {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); }
-
-/* Main count  */
-.count-main {
-  background-color: #1eafe7;
-  background-image: -webkit-linear-gradient(top, #1eafe7 0, #1a97c8 100%);
-  background-image: linear-gradient(to bottom, #1eafe7 0%, #1a97c8 100%); }
-
-/* Positive count  */
-.count-positive {
-  background-color: #34ba15;
-  background-image: -webkit-linear-gradient(top, #34ba15 0, #2da012 100%);
-  background-image: linear-gradient(to bottom, #34ba15 0%, #2da012 100%); }
-
-/* Negative count  */
-.count-negative {
-  background-color: #e71e1e;
-  background-image: -webkit-linear-gradient(top, #e71e1e 0, #c71a1a 100%);
-  background-image: linear-gradient(to bottom, #e71e1e 0%, #c71a1a 100%); }
-
- /* Segmented controllers
--------------------------------------------------- */
-.segmented-controller {
-  display: -webkit-box;
-  display: box;
-  margin-bottom: 10px;
-  overflow: hidden;
-  font-size: 12px;
-  font-weight: bold;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
-  list-style: none;
-  background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(top, #f8f8f8 0, #d4d4d4 100%);
-  background-image: linear-gradient(to bottom, #f8f8f8 0%, #d4d4d4 100%);
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(255, 255, 255, 0.8);
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal; }
-
-/* Section within controller */
-.segmented-controller li {
-  overflow: hidden;
-  text-align: center;
-  white-space: nowrap;
-  border-left: 1px solid #aaa;
-  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.5);
-  -webkit-box-flex: 1;
-  box-flex: 1; }
-
-/* Link that fills each section */
-.segmented-controller li > a {
-  display: block;
-  padding: 8px 16px;
-  overflow: hidden;
-  line-height: 15px;
-  color: #333;
-  text-overflow: ellipsis; }
-
-/* Remove border-left and shadow from first section */
-.segmented-controller li:first-child {
-  border-left-width: 0;
-  box-shadow: none; }
-
-/* Active segment of controller */
-.segmented-controller li.active {
-  background-color: #ccc;
-  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3); }
-
-.segmented-controller-item {
-  display: none; }
-
-.segmented-controller-item.active {
-  display: block; }
-
- /* Popovers (to be used with popovers.js)
--------------------------------------------------- */
-.popover {
-  position: fixed;
-  top: 55px;
-  left: 50%;
-  z-index: 20;
-  display: none;
-  width: 280px;
-  padding: 5px;
-  margin-left: -146px;
-  background-color: #555;
-  background-image: -webkit-linear-gradient(top, #555555 5%, #555555 6%, #111111 30%);
-  background-image: linear-gradient(to bottom, #555555 5%, #555555 6%, #111111 30%);
-  border: 1px solid #111;
-  border-radius: 6px;
-  opacity: 0;
-  box-shadow: inset 0 1px 1px -1px white, 0 3px 10px rgba(0, 0, 0, 0.3);
-  -webkit-transform: translate3d(0, -15px, 0);
-  transform: translate3d(0, -15px, 0);
-  -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; }
-
-/* Caret on top of popover using CSS triangles (thanks to @chriscoyier for solution) */
-.popover:before,
-.popover:after {
-  position: absolute;
-  left: 50%;
-  width: 0;
-  height: 0;
-  content: ''; }
-
-.popover:before {
-  top: -20px;
-  margin-left: -21px;
-  border-right: 21px solid transparent;
-  border-bottom: 21px solid #111;
-  border-left: 21px solid transparent; }
-
-.popover:after {
-  top: -19px;
-  margin-left: -20px;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid #555;
-  border-left: 20px solid transparent; }
-
-/* Wrapper for a title and buttons */
-.popover-header {
-  display: -webkit-box;
-  display: box;
-  height: 34px;
-  margin-bottom: 5px; }
-
-/* Centered title for popover */
-.popover-header .title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin: 15px 0;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 12px;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.5); }
-
-/* Generic style for all buttons in .popover-header */
-.popover-header [class*="button"] {
-  z-index: 25;
-  font-size: 12px;
-  line-height: 22px;
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-  background-color: #454545;
-  background-image: -webkit-linear-gradient(top, #454545 0, #353535 100%);
-  background-image: linear-gradient(to bottom, #454545 0%, #353535 100%);
-  border: 1px solid #111;
-  -webkit-box-flex: 0;
-  box-flex: 0; }
-
-/* Hacky way to right align buttons outside of flex-box system
-   Note: is only absolutely positioned button, would be better if flex-box had an "align right" option */
-.popover-header .title + [class*="button"]:last-child,
-.popover-header .button + [class*="button"]:last-child,
-.popover-header [class*="button"].pull-right {
-  position: absolute;
-  top: 5px;
-  right: 5px; }
-
-/* Active state for popover header buttons */
-.popover-header .button:active {
-  color: #fff;
-  background-color: #0876b1; }
-
-/* Popover animation
--------------------------------------------------- */
-.popover.visible {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
-
-/* Backdrop (used as invisible touch escape)
--------------------------------------------------- */
-.backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10; }
-
-/* Block level buttons in popovers
--------------------------------------------------- */
-/* Positioning and giving darker border to look sharp against dark popover */
-.popover .button-block {
-  margin-bottom: 5px;
-  border: 1px solid #111; }
-
-/* Remove extra margin on bottom of last button */
-.popover .button-block:last-child {
-  margin-bottom: 0; }
-
-/* Lists in popovers
--------------------------------------------------- */
-.popover .list {
-  width: auto;
-  max-height: 250px;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  overflow: auto;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 3px;
-  -webkit-overflow-scrolling: touch; }
-
- /* Slider styles (to be used with sliders.js)
--------------------------------------------------- */
-/* Width/height of slider */
-.slider,
-.slider > li {
-  width: 100%;
-  height: 200px; }
-
-/* Outer wrapper for slider */
-.slider {
-  overflow: hidden;
-  background-color: #000; }
-
-/* Inner wrapper for slider (width of all slides together) */
-.slider > ul {
-  position: relative;
-  font-size: 0;
-  /* Remove spaces from inline-block children */
-  white-space: nowrap;
-  -webkit-transition: all 0 linear;
-  transition: all 0 linear; }
-
-/* Individual slide */
-.slider > ul > li {
-  display: inline-block;
-  vertical-align: top;
-  /* Ensure that li always aligns to top */
-  width: 100%;
-  height: 100%; }
-
-/* Required reset of font-size to same as standard body */
-.slider > ul > li > * {
-  font-size: 14px; }
-
- /* Toggle styles (to be used with toggles.js)
--------------------------------------------------- */
-.toggle {
-  position: relative;
-  width: 75px;
-  height: 28px;
-  background-color: #eee;
-  border: 1px solid #bbb;
-  border-radius: 20px;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1); }
-
-/* Text indicating "on" or "off". Default is "off" */
-.toggle:before {
-  position: absolute;
-  right: 13px;
-  font-weight: bold;
-  line-height: 28px;
-  color: #777;
-  text-shadow: 0 1px #fff;
-  text-transform: uppercase;
-  content: "Off"; }
-
-/* Sliding handle */
-.toggle-handle {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  z-index: 2;
-  width: 28px;
-  height: 28px;
-  background-color: #fff;
-  background-image: -webkit-linear-gradient(top, white 0, #f2f2f2 100%);
-  background-image: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 100px;
-  -webkit-transition: -webkit-transform 0.1s ease-in-out, border 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out, border 0.1s ease-in-out; }
-
-/* Active state for toggle */
-.toggle.active {
-  background-color: #19a8e4;
-  background-image: -webkit-linear-gradient(top, #088cd4 0, #19a8e4 100%);
-  background-image: linear-gradient(to bottom, #088cd4 0%, #19a8e4 100%);
-  border: 1px solid #096c9d;
-  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.25); }
-
-/* Active state for toggle handle */
-.toggle.active .toggle-handle {
-  border-color: #0a76ad;
-  -webkit-transform: translate3d(48px, 0, 0);
-  transform: translate3d(48px, 0, 0); }
-
-/* Change "off" to "on" for active state */
-.toggle.active:before {
-  right: auto;
-  left: 15px;
-  color: #fff;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
-  content: "On"; }
-
- /* Push styles (to be used with push.js)
--------------------------------------------------- */
-/* Fade animation */
-.content.fade {
-  left: 0;
-  opacity: 0;
-  -webkit-transition: opacity .2s ease-in-out;
-  transition: opacity .2s ease-in-out; }
-
-.content.fade.in {
-  opacity: 1; }
-
-/* Slide animation */
-.content.slide {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-  transition: transform .25s ease-in-out; }
-
-.content.slide.left {
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0); }
-
-.content.slide.right {
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0); }
-
-/*  Font Awesome
-    the iconic font designed for use with Twitter Bootstrap
-    -------------------------------------------------------
-    The full suite of pictographic icons, examples, and documentation
-    can be found at: http://fortawesome.github.com/Font-Awesome/
-
-    License
-    -------------------------------------------------------
-    The Font Awesome webfont, CSS, and LESS files are licensed under CC BY 3.0:
-    http://creativecommons.org/licenses/by/3.0/ A mention of
-    'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable
-    source code is considered acceptable attribution (most common on the web).
-    If human readable source code is not available to the end user, a mention in
-    an 'About' or 'Credits' screen is considered acceptable (most common in desktop
-    or mobile software).
-
-    Contact
-    -------------------------------------------------------
-    Email: dave@davegandy.com
-    Twitter: http://twitter.com/fortaweso_me
-    Work: Lead Product Designer @ http://kyruus.com
-
-    */
-@font-face {
-  font-family: "FontAwesome";
-  src: url('/css/fonts/../font/fontawesome-webfont.eot');
-  src: url('/css/fonts/../font/fontawesome-webfont.eot?#iefix') format('eot'), url('/css/fonts/../font/fontawesome-webfont.woff') format('woff'), url('/css/fonts/../font/fontawesome-webfont.ttf') format('truetype'), url('/css/fonts/../font/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-/*  Font Awesome styles
-    ------------------------------------------------------- */
+/* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
   display: inline-block;
-  text-decoration: inherit; }
+  text-decoration: inherit;
+}
 
+/* line 8 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 a [class^="icon-"],
 a [class*=" icon-"] {
   display: inline-block;
-  text-decoration: inherit; }
+  text-decoration: inherit;
+}
 
-/* makes the font 33% larger relative to the icon container */
+/* line 12 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-large:before {
-  vertical-align: middle;
-  font-size: 4/3em; }
+  vertical-align: top;
+  font-size: 1.3333333333333333em;
+}
 
+/* line 16 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .btn [class^="icon-"],
-.btn [class*=" icon-"], .nav-tabs [class^="icon-"],
-.nav-tabs [class*=" icon-"] {
-  /* keeps button heights with and without icons the same */
-  line-height: .9em; }
+.btn [class*=" icon-"] {
+  line-height: 0.9em;
+}
 
+/* line 19 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 li [class^="icon-"],
 li [class*=" icon-"] {
   display: inline-block;
   width: 1.25em;
-  text-align: center; }
-li .icon-large:before,
-li .icon-large:before {
-  /* 1.5 increased font size for icon-large * 1.25 width */
-  width: 1.875em; }
+  text-align: center;
+}
 
-ul.icons {
+/* line 24 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
+li .icon-large[class^="icon-"],
+li .icon-large[class*=" icon-"] {
+  width: 1.875em;
+}
+
+/* line 27 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
+li[class^="icon-"],
+li[class*=" icon-"] {
+  margin-left: 0;
   list-style-type: none;
-  margin-left: 2em;
-  text-indent: -0.8em; }
-  ul.icons li [class^="icon-"],
-  ul.icons li [class*=" icon-"] {
-    width: .8em; }
-  ul.icons li .icon-large:before,
-  ul.icons li .icon-large:before {
-    /* 1.5 increased font size for icon-large * 1.25 width */
-    vertical-align: initial; }
+}
 
-/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-    readers do not read off random characters that represent icons */
+/* line 31 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
+li[class^="icon-"]:before,
+li[class*=" icon-"]:before {
+  text-indent: -2em;
+  text-align: center;
+}
+
+/* line 35 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
+li[class^="icon-"].icon-large:before,
+li[class*=" icon-"].icon-large:before {
+  text-indent: -1.3333333333333333em;
+}
+
+/* line 38 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-glass:before {
-  content: "\f000"; }
+  content: "\f000";
+}
 
+/* line 41 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-music:before {
-  content: "\f001"; }
+  content: "\f001";
+}
 
+/* line 44 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-search:before {
-  content: "\f002"; }
+  content: "\f002";
+}
 
+/* line 47 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-envelope:before {
-  content: "\f003"; }
+  content: "\f003";
+}
 
+/* line 50 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-heart:before {
-  content: "\f004"; }
+  content: "\f004";
+}
 
+/* line 53 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-star:before {
-  content: "\f005"; }
+  content: "\f005";
+}
 
+/* line 56 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-star-empty:before {
-  content: "\f006"; }
+  content: "\f006";
+}
 
+/* line 59 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-user:before {
-  content: "\f007"; }
+  content: "\f007";
+}
 
+/* line 62 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-film:before {
-  content: "\f008"; }
+  content: "\f008";
+}
 
+/* line 65 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-th-large:before {
-  content: "\f009"; }
+  content: "\f009";
+}
 
+/* line 68 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-th:before {
-  content: "\f00a"; }
+  content: "\f00a";
+}
 
+/* line 71 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-th-list:before {
-  content: "\f00b"; }
+  content: "\f00b";
+}
 
+/* line 74 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-ok:before {
-  content: "\f00c"; }
+  content: "\f00c";
+}
 
+/* line 77 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-remove:before {
-  content: "\f00d"; }
+  content: "\f00d";
+}
 
+/* line 80 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-zoom-in:before {
-  content: "\f00e"; }
+  content: "\f00e";
+}
 
+/* line 83 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-zoom-out:before {
-  content: "\f010"; }
+  content: "\f010";
+}
 
+/* line 86 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-off:before {
-  content: "\f011"; }
+  content: "\f011";
+}
 
+/* line 89 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-signal:before {
-  content: "\f012"; }
+  content: "\f012";
+}
 
+/* line 92 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-cog:before {
-  content: "\f013"; }
+  content: "\f013";
+}
 
+/* line 95 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-trash:before {
-  content: "\f014"; }
+  content: "\f014";
+}
 
+/* line 98 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-home:before {
-  content: "\f015"; }
+  content: "\f015";
+}
 
+/* line 101 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-file:before {
-  content: "\f016"; }
+  content: "\f016";
+}
 
+/* line 104 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-time:before {
-  content: "\f017"; }
+  content: "\f017";
+}
 
+/* line 107 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-road:before {
-  content: "\f018"; }
+  content: "\f018";
+}
 
+/* line 110 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-download-alt:before {
-  content: "\f019"; }
+  content: "\f019";
+}
 
+/* line 113 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-download:before {
-  content: "\f01a"; }
+  content: "\f01a";
+}
 
+/* line 116 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-upload:before {
-  content: "\f01b"; }
+  content: "\f01b";
+}
 
+/* line 119 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-inbox:before {
-  content: "\f01c"; }
+  content: "\f01c";
+}
 
+/* line 122 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-play-circle:before {
-  content: "\f01d"; }
+  content: "\f01d";
+}
 
+/* line 125 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-repeat:before {
-  content: "\f01e"; }
+  content: "\f01e";
+}
 
-/* \f020 doesn't work in Safari. all shifted one down */
+/* line 128 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-refresh:before {
-  content: "\f021"; }
+  content: "\f021";
+}
 
+/* line 131 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-list-alt:before {
-  content: "\f022"; }
+  content: "\f022";
+}
 
+/* line 134 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-lock:before {
-  content: "\f023"; }
+  content: "\f023";
+}
 
+/* line 137 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-flag:before {
-  content: "\f024"; }
+  content: "\f024";
+}
 
+/* line 140 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-headphones:before {
-  content: "\f025"; }
+  content: "\f025";
+}
 
+/* line 143 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-volume-off:before {
-  content: "\f026"; }
+  content: "\f026";
+}
 
+/* line 146 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-volume-down:before {
-  content: "\f027"; }
+  content: "\f027";
+}
 
+/* line 149 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-volume-up:before {
-  content: "\f028"; }
+  content: "\f028";
+}
 
+/* line 152 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-qrcode:before {
-  content: "\f029"; }
+  content: "\f029";
+}
 
+/* line 155 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-barcode:before {
-  content: "\f02a"; }
+  content: "\f02a";
+}
 
+/* line 158 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-tag:before {
-  content: "\f02b"; }
+  content: "\f02b";
+}
 
+/* line 161 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-tags:before {
-  content: "\f02c"; }
+  content: "\f02c";
+}
 
+/* line 164 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-book:before {
-  content: "\f02d"; }
+  content: "\f02d";
+}
 
+/* line 167 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bookmark:before {
-  content: "\f02e"; }
+  content: "\f02e";
+}
 
+/* line 170 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-print:before {
-  content: "\f02f"; }
+  content: "\f02f";
+}
 
+/* line 173 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-camera:before {
-  content: "\f030"; }
+  content: "\f030";
+}
 
+/* line 176 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-font:before {
-  content: "\f031"; }
+  content: "\f031";
+}
 
+/* line 179 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bold:before {
-  content: "\f032"; }
+  content: "\f032";
+}
 
+/* line 182 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-italic:before {
-  content: "\f033"; }
+  content: "\f033";
+}
 
+/* line 185 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-text-height:before {
-  content: "\f034"; }
+  content: "\f034";
+}
 
+/* line 188 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-text-width:before {
-  content: "\f035"; }
+  content: "\f035";
+}
 
+/* line 191 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-align-left:before {
-  content: "\f036"; }
+  content: "\f036";
+}
 
+/* line 194 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-align-center:before {
-  content: "\f037"; }
+  content: "\f037";
+}
 
+/* line 197 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-align-right:before {
-  content: "\f038"; }
+  content: "\f038";
+}
 
+/* line 200 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-align-justify:before {
-  content: "\f039"; }
+  content: "\f039";
+}
 
+/* line 203 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-list:before {
-  content: "\f03a"; }
+  content: "\f03a";
+}
 
+/* line 206 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-indent-left:before {
-  content: "\f03b"; }
+  content: "\f03b";
+}
 
+/* line 209 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-indent-right:before {
-  content: "\f03c"; }
+  content: "\f03c";
+}
 
+/* line 212 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-facetime-video:before {
-  content: "\f03d"; }
+  content: "\f03d";
+}
 
+/* line 215 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-picture:before {
-  content: "\f03e"; }
+  content: "\f03e";
+}
 
+/* line 218 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-pencil:before {
-  content: "\f040"; }
+  content: "\f040";
+}
 
+/* line 221 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-map-marker:before {
-  content: "\f041"; }
+  content: "\f041";
+}
 
+/* line 224 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-adjust:before {
-  content: "\f042"; }
+  content: "\f042";
+}
 
+/* line 227 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-tint:before {
-  content: "\f043"; }
+  content: "\f043";
+}
 
+/* line 230 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-edit:before {
-  content: "\f044"; }
+  content: "\f044";
+}
 
+/* line 233 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-share:before {
-  content: "\f045"; }
+  content: "\f045";
+}
 
+/* line 236 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-check:before {
-  content: "\f046"; }
+  content: "\f046";
+}
 
+/* line 239 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-move:before {
-  content: "\f047"; }
+  content: "\f047";
+}
 
+/* line 242 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-step-backward:before {
-  content: "\f048"; }
+  content: "\f048";
+}
 
+/* line 245 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-fast-backward:before {
-  content: "\f049"; }
+  content: "\f049";
+}
 
+/* line 248 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-backward:before {
-  content: "\f04a"; }
+  content: "\f04a";
+}
 
+/* line 251 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-play:before {
-  content: "\f04b"; }
+  content: "\f04b";
+}
 
+/* line 254 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-pause:before {
-  content: "\f04c"; }
+  content: "\f04c";
+}
 
+/* line 257 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-stop:before {
-  content: "\f04d"; }
+  content: "\f04d";
+}
 
+/* line 260 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-forward:before {
-  content: "\f04e"; }
+  content: "\f04e";
+}
 
+/* line 263 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-fast-forward:before {
-  content: "\f050"; }
+  content: "\f050";
+}
 
+/* line 266 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-step-forward:before {
-  content: "\f051"; }
+  content: "\f051";
+}
 
+/* line 269 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-eject:before {
-  content: "\f052"; }
+  content: "\f052";
+}
 
+/* line 272 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-chevron-left:before {
-  content: "\f053"; }
+  content: "\f053";
+}
 
+/* line 275 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-chevron-right:before {
-  content: "\f054"; }
+  content: "\f054";
+}
 
+/* line 278 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-plus-sign:before {
-  content: "\f055"; }
+  content: "\f055";
+}
 
+/* line 281 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-minus-sign:before {
-  content: "\f056"; }
+  content: "\f056";
+}
 
+/* line 284 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-remove-sign:before {
-  content: "\f057"; }
+  content: "\f057";
+}
 
+/* line 287 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-ok-sign:before {
-  content: "\f058"; }
+  content: "\f058";
+}
 
+/* line 290 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-question-sign:before {
-  content: "\f059"; }
+  content: "\f059";
+}
 
+/* line 293 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-info-sign:before {
-  content: "\f05a"; }
+  content: "\f05a";
+}
 
+/* line 296 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-screenshot:before {
-  content: "\f05b"; }
+  content: "\f05b";
+}
 
+/* line 299 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-remove-circle:before {
-  content: "\f05c"; }
+  content: "\f05c";
+}
 
+/* line 302 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-ok-circle:before {
-  content: "\f05d"; }
+  content: "\f05d";
+}
 
+/* line 305 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-ban-circle:before {
-  content: "\f05e"; }
+  content: "\f05e";
+}
 
+/* line 308 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-arrow-left:before {
-  content: "\f060"; }
+  content: "\f060";
+}
 
+/* line 311 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-arrow-right:before {
-  content: "\f061"; }
+  content: "\f061";
+}
 
+/* line 314 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-arrow-up:before {
-  content: "\f062"; }
+  content: "\f062";
+}
 
+/* line 317 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-arrow-down:before {
-  content: "\f063"; }
+  content: "\f063";
+}
 
+/* line 320 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-share-alt:before {
-  content: "\f064"; }
+  content: "\f064";
+}
 
+/* line 323 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-resize-full:before {
-  content: "\f065"; }
+  content: "\f065";
+}
 
+/* line 326 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-resize-small:before {
-  content: "\f066"; }
+  content: "\f066";
+}
 
+/* line 329 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-plus:before {
-  content: "\f067"; }
+  content: "\f067";
+}
 
+/* line 332 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-minus:before {
-  content: "\f068"; }
+  content: "\f068";
+}
 
+/* line 335 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-asterisk:before {
-  content: "\f069"; }
+  content: "\f069";
+}
 
+/* line 338 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-exclamation-sign:before {
-  content: "\f06a"; }
+  content: "\f06a";
+}
 
+/* line 341 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-gift:before {
-  content: "\f06b"; }
+  content: "\f06b";
+}
 
+/* line 344 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-leaf:before {
-  content: "\f06c"; }
+  content: "\f06c";
+}
 
+/* line 347 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-fire:before {
-  content: "\f06d"; }
+  content: "\f06d";
+}
 
+/* line 350 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-eye-open:before {
-  content: "\f06e"; }
+  content: "\f06e";
+}
 
+/* line 353 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-eye-close:before {
-  content: "\f070"; }
+  content: "\f070";
+}
 
+/* line 356 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-warning-sign:before {
-  content: "\f071"; }
+  content: "\f071";
+}
 
+/* line 359 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-plane:before {
-  content: "\f072"; }
+  content: "\f072";
+}
 
+/* line 362 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-calendar:before {
-  content: "\f073"; }
+  content: "\f073";
+}
 
+/* line 365 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-random:before {
-  content: "\f074"; }
+  content: "\f074";
+}
 
+/* line 368 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-comment:before {
-  content: "\f075"; }
+  content: "\f075";
+}
 
+/* line 371 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-magnet:before {
-  content: "\f076"; }
+  content: "\f076";
+}
 
+/* line 374 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-chevron-up:before {
-  content: "\f077"; }
+  content: "\f077";
+}
 
+/* line 377 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-chevron-down:before {
-  content: "\f078"; }
+  content: "\f078";
+}
 
+/* line 380 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-retweet:before {
-  content: "\f079"; }
+  content: "\f079";
+}
 
+/* line 383 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-shopping-cart:before {
-  content: "\f07a"; }
+  content: "\f07a";
+}
 
+/* line 386 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-folder-close:before {
-  content: "\f07b"; }
+  content: "\f07b";
+}
 
+/* line 389 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-folder-open:before {
-  content: "\f07c"; }
+  content: "\f07c";
+}
 
+/* line 392 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-resize-vertical:before {
-  content: "\f07d"; }
+  content: "\f07d";
+}
 
+/* line 395 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-resize-horizontal:before {
-  content: "\f07e"; }
+  content: "\f07e";
+}
 
+/* line 398 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bar-chart:before {
-  content: "\f080"; }
+  content: "\f080";
+}
 
+/* line 401 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-twitter-sign:before {
-  content: "\f081"; }
+  content: "\f081";
+}
 
+/* line 404 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-facebook-sign:before {
-  content: "\f082"; }
+  content: "\f082";
+}
 
+/* line 407 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-camera-retro:before {
-  content: "\f083"; }
+  content: "\f083";
+}
 
+/* line 410 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-key:before {
-  content: "\f084"; }
+  content: "\f084";
+}
 
+/* line 413 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-cogs:before {
-  content: "\f085"; }
+  content: "\f085";
+}
 
+/* line 416 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-comments:before {
-  content: "\f086"; }
+  content: "\f086";
+}
 
+/* line 419 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-thumbs-up:before {
-  content: "\f087"; }
+  content: "\f087";
+}
 
+/* line 422 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-thumbs-down:before {
-  content: "\f088"; }
+  content: "\f088";
+}
 
+/* line 425 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-star-half:before {
-  content: "\f089"; }
+  content: "\f089";
+}
 
+/* line 428 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-heart-empty:before {
-  content: "\f08a"; }
+  content: "\f08a";
+}
 
+/* line 431 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-signout:before {
-  content: "\f08b"; }
+  content: "\f08b";
+}
 
+/* line 434 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-linkedin-sign:before {
-  content: "\f08c"; }
+  content: "\f08c";
+}
 
+/* line 437 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-pushpin:before {
-  content: "\f08d"; }
+  content: "\f08d";
+}
 
+/* line 440 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-external-link:before {
-  content: "\f08e"; }
+  content: "\f08e";
+}
 
+/* line 443 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-signin:before {
-  content: "\f090"; }
+  content: "\f090";
+}
 
+/* line 446 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-trophy:before {
-  content: "\f091"; }
+  content: "\f091";
+}
 
+/* line 449 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-github-sign:before {
-  content: "\f092"; }
+  content: "\f092";
+}
 
+/* line 452 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-upload-alt:before {
-  content: "\f093"; }
+  content: "\f093";
+}
 
+/* line 455 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-lemon:before {
-  content: "\f094"; }
+  content: "\f094";
+}
 
+/* line 458 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-phone:before {
-  content: "\f095"; }
+  content: "\f095";
+}
 
+/* line 461 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-check-empty:before {
-  content: "\f096"; }
+  content: "\f096";
+}
 
+/* line 464 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bookmark-empty:before {
-  content: "\f097"; }
+  content: "\f097";
+}
 
+/* line 467 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-phone-sign:before {
-  content: "\f098"; }
+  content: "\f098";
+}
 
+/* line 470 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-twitter:before {
-  content: "\f099"; }
+  content: "\f099";
+}
 
+/* line 473 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-facebook:before {
-  content: "\f09a"; }
+  content: "\f09a";
+}
 
+/* line 476 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-github:before {
-  content: "\f09b"; }
+  content: "\f09b";
+}
 
+/* line 479 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-unlock:before {
-  content: "\f09c"; }
+  content: "\f09c";
+}
 
+/* line 482 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-credit-card:before {
-  content: "\f09d"; }
+  content: "\f09d";
+}
 
+/* line 485 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-rss:before {
-  content: "\f09e"; }
+  content: "\f09e";
+}
 
+/* line 488 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-hdd:before {
-  content: "\f0a0"; }
+  content: "\f0a0";
+}
 
+/* line 491 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bullhorn:before {
-  content: "\f0a1"; }
+  content: "\f0a1";
+}
 
+/* line 494 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bell:before {
-  content: "\f0a2"; }
+  content: "\f0a2";
+}
 
+/* line 497 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-certificate:before {
-  content: "\f0a3"; }
+  content: "\f0a3";
+}
 
+/* line 500 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-hand-right:before {
-  content: "\f0a4"; }
+  content: "\f0a4";
+}
 
+/* line 503 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-hand-left:before {
-  content: "\f0a5"; }
+  content: "\f0a5";
+}
 
+/* line 506 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-hand-up:before {
-  content: "\f0a6"; }
+  content: "\f0a6";
+}
 
+/* line 509 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-hand-down:before {
-  content: "\f0a7"; }
+  content: "\f0a7";
+}
 
+/* line 512 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-circle-arrow-left:before {
-  content: "\f0a8"; }
+  content: "\f0a8";
+}
 
+/* line 515 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-circle-arrow-right:before {
-  content: "\f0a9"; }
+  content: "\f0a9";
+}
 
+/* line 518 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-circle-arrow-up:before {
-  content: "\f0aa"; }
+  content: "\f0aa";
+}
 
+/* line 521 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-circle-arrow-down:before {
-  content: "\f0ab"; }
+  content: "\f0ab";
+}
 
+/* line 524 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-globe:before {
-  content: "\f0ac"; }
+  content: "\f0ac";
+}
 
+/* line 527 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-wrench:before {
-  content: "\f0ad"; }
+  content: "\f0ad";
+}
 
+/* line 530 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-tasks:before {
-  content: "\f0ae"; }
+  content: "\f0ae";
+}
 
+/* line 533 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-filter:before {
-  content: "\f0b0"; }
+  content: "\f0b0";
+}
 
+/* line 536 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-briefcase:before {
-  content: "\f0b1"; }
+  content: "\f0b1";
+}
 
+/* line 539 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-fullscreen:before {
-  content: "\f0b2"; }
+  content: "\f0b2";
+}
 
+/* line 542 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-group:before {
-  content: "\f0c0"; }
+  content: "\f0c0";
+}
 
+/* line 545 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-link:before {
-  content: "\f0c1"; }
+  content: "\f0c1";
+}
 
+/* line 548 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-cloud:before {
-  content: "\f0c2"; }
+  content: "\f0c2";
+}
 
+/* line 551 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-beaker:before {
-  content: "\f0c3"; }
+  content: "\f0c3";
+}
 
+/* line 554 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-cut:before {
-  content: "\f0c4"; }
+  content: "\f0c4";
+}
 
+/* line 557 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-copy:before {
-  content: "\f0c5"; }
+  content: "\f0c5";
+}
 
+/* line 560 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-paper-clip:before {
-  content: "\f0c6"; }
+  content: "\f0c6";
+}
 
+/* line 563 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-save:before {
-  content: "\f0c7"; }
+  content: "\f0c7";
+}
 
+/* line 566 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-sign-blank:before {
-  content: "\f0c8"; }
+  content: "\f0c8";
+}
 
+/* line 569 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-reorder:before {
-  content: "\f0c9"; }
+  content: "\f0c9";
+}
 
+/* line 572 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-list-ul:before {
-  content: "\f0ca"; }
+  content: "\f0ca";
+}
 
+/* line 575 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-list-ol:before {
-  content: "\f0cb"; }
+  content: "\f0cb";
+}
 
+/* line 578 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-strikethrough:before {
-  content: "\f0cc"; }
+  content: "\f0cc";
+}
 
+/* line 581 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-underline:before {
-  content: "\f0cd"; }
+  content: "\f0cd";
+}
 
+/* line 584 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-table:before {
-  content: "\f0ce"; }
+  content: "\f0ce";
+}
 
+/* line 587 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-magic:before {
-  content: "\f0d0"; }
+  content: "\f0d0";
+}
 
+/* line 590 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-truck:before {
-  content: "\f0d1"; }
+  content: "\f0d1";
+}
 
+/* line 593 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-pinterest:before {
-  content: "\f0d2"; }
+  content: "\f0d2";
+}
 
+/* line 596 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-pinterest-sign:before {
-  content: "\f0d3"; }
+  content: "\f0d3";
+}
 
+/* line 599 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-google-plus-sign:before {
-  content: "\f0d4"; }
+  content: "\f0d4";
+}
 
+/* line 602 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-google-plus:before {
-  content: "\f0d5"; }
+  content: "\f0d5";
+}
 
+/* line 605 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-money:before {
-  content: "\f0d6"; }
+  content: "\f0d6";
+}
 
+/* line 608 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-caret-down:before {
-  content: "\f0d7"; }
+  content: "\f0d7";
+}
 
+/* line 611 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-caret-up:before {
-  content: "\f0d8"; }
+  content: "\f0d8";
+}
 
+/* line 614 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-caret-left:before {
-  content: "\f0d9"; }
+  content: "\f0d9";
+}
 
+/* line 617 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-caret-right:before {
-  content: "\f0da"; }
+  content: "\f0da";
+}
 
+/* line 620 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-columns:before {
-  content: "\f0db"; }
+  content: "\f0db";
+}
 
+/* line 623 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-sort:before {
-  content: "\f0dc"; }
+  content: "\f0dc";
+}
 
+/* line 626 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-sort-down:before {
-  content: "\f0dd"; }
+  content: "\f0dd";
+}
 
+/* line 629 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-sort-up:before {
-  content: "\f0de"; }
+  content: "\f0de";
+}
 
+/* line 632 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-envelope-alt:before {
-  content: "\f0e0"; }
+  content: "\f0e0";
+}
 
+/* line 635 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-linkedin:before {
-  content: "\f0e1"; }
+  content: "\f0e1";
+}
 
+/* line 638 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-undo:before {
-  content: "\f0e2"; }
+  content: "\f0e2";
+}
 
+/* line 641 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-legal:before {
-  content: "\f0e3"; }
+  content: "\f0e3";
+}
 
+/* line 644 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-dashboard:before {
-  content: "\f0e4"; }
+  content: "\f0e4";
+}
 
+/* line 647 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-comment-alt:before {
-  content: "\f0e5"; }
+  content: "\f0e5";
+}
 
+/* line 650 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-comments-alt:before {
-  content: "\f0e6"; }
+  content: "\f0e6";
+}
 
+/* line 653 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-bolt:before {
-  content: "\f0e7"; }
+  content: "\f0e7";
+}
 
+/* line 656 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-sitemap:before {
-  content: "\f0e8"; }
+  content: "\f0e8";
+}
 
+/* line 659 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-umbrella:before {
-  content: "\f0e9"; }
+  content: "\f0e9";
+}
 
+/* line 662 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-paste:before {
-  content: "\f0ea"; }
+  content: "\f0ea";
+}
 
+/* line 665 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_font-awesome.styl */
 .icon-user-md:before {
-  content: "\f200"; }
+  content: "\f200";
+}
 
+/* line 667 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
+
+/* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
+
+/* line 2 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
 .tab-item a {
   display: block;
-  height: 100%; }
+  height: 100%;
+  color: #fffffa;
+}
 
+/* line 7 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
 .tab-icon {
   position: static !important;
   padding: 0;
   width: 35px;
-  height: 35px; }
+  height: 35px;
+  font-size: 2em;
+}
 
+/* line 14 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
+
+/* line 15 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
 .input-row label {
-  width: 50%; }
+  width: 50%;
+}
+
+/* line 18 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_override.styl */
 .input-row label + input {
-  width: 40%; }
+  width: 40%;
+}
 
-.tab-item a {
-  color: #fffffa; }
-.tab-item .tab-icon {
-  font-size: 2em; }
+/* line 20 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 
+/* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 * {
   -webkit-touch-callout: none;
-  /* prevent callout to copy image, etc when tap to hold */
   -webkit-text-size-adjust: none;
-  /* prevent webkit from resizing text to fit */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-user-select: text;
-  /* prevent copy paste, to allow, change 'none' to 'text' */ }
+}
 
+/* line 8 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 body {
   -webkit-font-smoothing: antialiased;
   font-family: "proxima-nova", "helvetica neue", Arial, sans-serif;
-  opacity: 0; }
+  opacity: 0;
+}
 
-.wf-active body {
+/* line 15 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 16 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+.wf-active body,
+.wf-inactive body {
   -webkit-transition: opacity 0.3s linear;
-  opacity: 1; }
+  opacity: 1;
+}
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; }
+/* line 20 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
 
+/* line 23 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 24 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 .content-padded h1 {
   font-size: 2em;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+}
 
+/* line 28 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 29 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 #signup h1 {
   margin: 0 0 0.2em;
   font-size: 2em;
-  text-align: center; }
+  text-align: center;
+}
 
+/* line 34 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 #via-or {
-  margin: 1em auto; }
+  margin: 1em auto;
+}

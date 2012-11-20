@@ -1,6 +1,7 @@
 *.coffee
+*.styl
 *.jade
 .git
 package.json
 Profile
-www/*
+www
