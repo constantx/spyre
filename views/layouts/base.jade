@@ -13,9 +13,14 @@ html
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
     
-    //- Set Apple icons for when prototype is saved to home screen
+    //- Set Apple icons for when app is saved to home screen
     link(rel='apple-touch-icon-precomposed', sizes='57x57',   href='/res/icon/ios/icon-57.png')
     link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/res/icon/ios/icon-57-2x.png')
+
+    //- Set Apple splash screen for when app is loading
+    link(rel="apple-touch-startup-image", sizes='320x480', href="/res/screen/ios/screen-iphone-portrait.png")
+    link(rel="apple-touch-startup-image", sizes='640x960', href="/res/screen/ios/screen-iphone-portrait-2x.png")
+    link(rel="apple-touch-startup-image", sizes='640x1136', href="/res/screen/ios/screen-iphone-portrait-568h.png")
     
     link(rel='stylesheet', type='text/css', href='/css/main.css')
     
