@@ -20,7 +20,7 @@ exports.settings = function(req, res) {
 
 exports.signin = function(req, res) {
   return res.render("signin", {
-    title: "signin"
+    title: "Spyre"
   });
 };
 

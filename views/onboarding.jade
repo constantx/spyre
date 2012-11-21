@@ -7,21 +7,26 @@ block bar-title-left
   if step != 1 
     - lastStep = step - 1
     a.button.button-back(href='/onboarding/#{lastStep}', data-transition='slide-out') Back
+  else
+    a.button.button-back(href='/signup', data-transition='slide-out') Back
 
 //- no bar tab on signup page
 block bar-tab
 
+mixin step-count(current_step)
+  - var i = 1
+  - var j = 5
+  - while(i <= j)
+    if i == current_step
+      span.count-main= i
+    else
+      span.count= i
+    - i++
+
 block content
   .onboarding(id='onboarding#{step}')
-    .content-padded      
-      case step
-        when 1
-          include partials/_onboarding_1
-        when 2
-          include partials/_onboarding_2
-        when 3
-          include partials/_onboarding_3
-        when 4
-          include partials/_onboarding_4
-        when 5
-          include partials/_onboarding_5
+    .content-padded
+      mixin onboarding(step)
+
+    #step-count
+      mixin step-count(step)

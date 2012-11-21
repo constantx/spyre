@@ -15,7 +15,7 @@ exports.settings = (req, res) ->
 
 exports.signin = (req, res) ->
   res.render "signin",
-    title: "signin"
+    title: "Spyre"
 
 exports.signup = (req, res) ->
   res.render "signup",
