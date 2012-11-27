@@ -288,59 +288,60 @@ h2.heading-page {
 [class*='choice-'] strong {
   text-transform: uppercase;
   font-size: 1.2em;
+  font-weight: bold;
 }
 
-/* line 80 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 81 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .choice-negative {
   background-color: #2d2d29;
   color: #fffffa;
 }
 
-/* line 84 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 85 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .choice-positive {
   background-color: #fa7c07;
   color: #fffffa;
   left: 50%;
 }
 
-/* line 89 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 90 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social {
   text-transform: uppercase;
   font-weight: bold;
 }
 
-/* line 93 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 94 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social [class*='icon'] {
   font-size: 1em;
 }
 
-/* line 96 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 97 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social a {
   border-bottom: solid 1px #fa7c07;
 }
 
-/* line 99 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 100 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social #via-fb {
   color: #3b5998;
   border-bottom-color: #3b5998;
 }
 
-/* line 103 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 104 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social #via-tw {
   color: #0094c2;
   border-bottom-color: #0094c2;
 }
 
-/* line 107 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 108 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-or {
   text-transform: uppercase;
   color: #707066;
   font-size: 0.8em;
 }
 
-/* line 112 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
-
 /* line 113 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+
+/* line 114 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .onboarding [class*='choice-'] {
   font-weight: bold;
 }
