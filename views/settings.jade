@@ -3,30 +3,27 @@ extends layouts/base
 block bar-title-center
   h1.title= title
 
-block bar-title-right
-  a.button(href='/signup', data-transition='slide-out') Sign out
-
 block bar-tab-inner
   mixin bar-tab('settings')
 
 block content
   #stats
     .content-padded
-      h1 Settings
       ul.list
-        li Push Notification
-          .toggle.active
-            .toggle-handle
-        li Location
-          .toggle.active
-            .toggle-handle
         li Facebook (connected)
           a.button-main Unlink
         li Twitter (connected)
           a.button-main Unlink
-
+        li Location
+          .toggle.active
+            .toggle-handle
+        li Push Notification
+          .toggle.active
+            .toggle-handle
+        li Sign out
+          a.button-main(href='/signup', data-transition='slide-out') Sign out
+        
       p
-        a(href='') Privacy Policy
-        br
-        a(href='') Terms of Service
-        br
+        a(href='#') Privacy Policy
+        | &nbsp; | &nbsp;
+        a(href='#') Terms of Service

@@ -4,15 +4,14 @@ block bar-title-center
   h1.title= title
 
 block content
-  .content-padded
-    #distraction
-      h1 Need a quick distraction? Try the suggestions below
-      ul
-        li take a walk around the block 
-        li do a crossword puzzle
-        li chat with a friend
-      
-      a(href='') More suggestions
-
-    #more-distraction
-      a(href='') Tap for longer suggestions
+  #distraction
+    .content-padded
+      h2.heading-page Need a quick distraction? Try the suggestions below
+      ul.list
+        li Take a walk around the block 
+        li Do a crossword puzzle
+        li Chat with a friend
+        li 
+          a(href='#') 
+            | More suggestions
+            span.count 10+

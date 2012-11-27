@@ -4,7 +4,7 @@ block bar-title-center
   h1.title= title
 
 block bar-title-left
-  a.button.button-back(href='/signup', data-transition='slide-out') Back
+  a.button.button-back.button-hot(href='/signup', data-transition='slide-out') Back
 //- no bar tab on signup page
 block bar-tab
 
@@ -12,13 +12,9 @@ block content
   #signin
     .content-padded
       #signin
-        h1 Sign in
+        form.input-group
+          input(type='text', placeholder='email')
+          input(type='password', placeholder='and password')
+        a.button-main.button-block.button-hot(href='/home', data-transition='slide-in') Sign in
         br
-        #via-email
-          form
-            input(type='text', placeholder='email')
-            input(type='password', placeholder='and password')
-            a(href='/forgot', data-transition='slide-in') forgot password?
-            br
-            br
-            a.button-main.button-block(href='/home', data-transition='slide-in') Sign in
+        a(href='/forgot', data-transition='slide-in') forgot password?

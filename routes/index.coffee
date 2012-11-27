@@ -7,15 +7,15 @@ exports.home = (req, res) ->
 
 exports.stats = (req, res) ->
   res.render "stats",
-    title: "Spyre"
+    title: "Stats"
 
 exports.settings = (req, res) ->
   res.render "settings",
-    title: "Spyre"
+    title: "Settings"
 
 exports.signin = (req, res) ->
   res.render "signin",
-    title: "Spyre"
+    title: "Sign in"
 
 exports.signup = (req, res) ->
   res.render "signup",
@@ -23,17 +23,17 @@ exports.signup = (req, res) ->
 
 exports.craving = (req, res) ->
   res.render "craving",
-    title: "Spyre"
+    title: "craving"
 exports.craving_smoke = (req, res) ->
   res.render "craving_smoke",
-    title: "Spyre"
+    title: "craving"
 exports.craving_not_smoke = (req, res) ->
   res.render "craving_not_smoke",
-    title: "Spyre"
+    title: "craving"
 
 exports.distraction = (req, res) ->
   res.render "distraction",
-    title: "Spyre"
+    title: "distraction"
 
 exports.onboarding_1 = (req, res) ->
   res.render "onboarding",

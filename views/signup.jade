@@ -10,18 +10,21 @@ block bar-title-right
 block bar-tab
 
 block content
-  #signup-step1
+  #signup
     .content-padded
-      #signup
-        h1 Sign up
-        #via-social
-          a.button(href='/onboarding/1') via Facebook
-          | &nbsp;
-          a.button(href='/onboarding/1') via Twitter
-        #via-email
-          #via-or or with your email
-          form
-            input(type='text', placeholder='email')
-            input(type='password', placeholder='and password')
-            input(type='password', placeholder='confirm password')
-            a.button.button-block(href='/onboarding/1', data-transition='slide-in') Sign up
+      h1.heading-page Sign up
+      #via-social
+        a#via-fb(href='/onboarding/1')
+          i.icon-facebook-sign
+          | &nbsp; via Facebook
+        | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        a#via-tw(href='/onboarding/1')
+          i.icon-twitter-sign
+          | &nbsp; via Twitter
+      #via-or or with your email
+      #via-email
+        form.input-group
+          input(type='text', placeholder='email')
+          input(type='password', placeholder='and password')
+          input(type='password', placeholder='confirm password')
+        a.button-block.button-main(href='/onboarding/1', data-transition='slide-in') Sign up

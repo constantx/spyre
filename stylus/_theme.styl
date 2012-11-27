@@ -1,0 +1,114 @@
+[class*="button"]
+  -webkit-border-radius: 1px
+  -webkit-background-clip: padding-box
+  background-color: #f97b06
+  border: 1px solid #e5e5e5
+  background-image: -webkit-linear-gradient(90deg, #f1f1f1 0%, #fffff9 100%)
+  text-transform capitalize
+  box-shadow none
+
+.bar-title [class*="button"]
+.button-main
+  background-color: #3ba1a1
+  border: 1px solid #1b9fbb
+  background-image: -webkit-linear-gradient(90deg, #1ba5c7 0%, #21b9d9 100%)
+
+.button-hot
+  color: color-light
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3)
+  background-color: #f97b06 !important
+  border: 1px solid #e18209 !important
+  background-image: -webkit-linear-gradient(90deg, rgba(247,128,10,.7) 0%, rgba(248,155,11,.7) 100%) !important
+
+[class*="count"]
+  -webkit-border-radius: 1px
+  margin-right 0.5em
+
+.bar-title
+  background none
+  border-bottom solid 1px color-border
+  z-index: 1
+  
+  .title
+    color color-dark
+    text-shadow none
+    font-size 4em
+
+.content
+  background-color: rgba(color-light, 0.8)
+  z-index: 2
+  // box-shadow 0 -2px 3px 0px rgba(color-dark, 0.15)
+
+.bar-tab
+  background color-light
+  border none
+  
+.count-main
+  background none
+  background-color color-hot
+
+.tab-item
+  border-top solid 1px color-border
+  position relative
+
+  a
+    color color-dark
+
+  &.active
+    box-shadow none
+    border-top-color color-hot
+    border-top-style solid
+
+    a
+      color color-hot
+
+.tab-icon
+  font-size: 2em
+
+[class*='choice-']
+  font-weight: 300
+  text-align: center
+  text-transform capitalize
+
+  a
+    color color-light
+  strong
+    text-transform uppercase
+    font-size 1.2em
+
+
+.choice-negative
+  background-color color-dark
+  color color-light
+
+.choice-positive
+  background-color color-hot
+  color color-light
+  left: 50%
+
+#via-social
+  text-transform uppercase
+  font-weight bold
+  
+  [class*='icon']
+    font-size 1em
+
+  a
+    border-bottom solid 1px color-hot
+
+  #via-fb
+    color color-fb
+    border-bottom-color color-fb
+
+  #via-tw
+    color color-tw
+    border-bottom-color color-tw
+
+#via-or
+  text-transform: uppercase
+  color color-meta
+  font-size 0.8em
+
+.onboarding
+  [class*='choice-']
+    font-weight: bold

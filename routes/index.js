@@ -8,19 +8,19 @@ exports.home = function(req, res) {
 
 exports.stats = function(req, res) {
   return res.render("stats", {
-    title: "Spyre"
+    title: "Stats"
   });
 };
 
 exports.settings = function(req, res) {
   return res.render("settings", {
-    title: "Spyre"
+    title: "Settings"
   });
 };
 
 exports.signin = function(req, res) {
   return res.render("signin", {
-    title: "Spyre"
+    title: "Sign in"
   });
 };
 
@@ -32,25 +32,25 @@ exports.signup = function(req, res) {
 
 exports.craving = function(req, res) {
   return res.render("craving", {
-    title: "Spyre"
+    title: "craving"
   });
 };
 
 exports.craving_smoke = function(req, res) {
   return res.render("craving_smoke", {
-    title: "Spyre"
+    title: "craving"
   });
 };
 
 exports.craving_not_smoke = function(req, res) {
   return res.render("craving_not_smoke", {
-    title: "Spyre"
+    title: "craving"
   });
 };
 
 exports.distraction = function(req, res) {
   return res.render("distraction", {
-    title: "Spyre"
+    title: "distraction"
   });
 };
 

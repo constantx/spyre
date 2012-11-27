@@ -7,17 +7,25 @@ block bar-tab-inner
   mixin bar-tab('home')
 
 block content
-  .content-padded
-    #home
-      h1 You haven't smoked in
-      p ____ days, which saved you
-      p ____ dollars and added
-      p ____ minutes to your life!
+  #home
+    .content-padded
+      #home-stats
+        h2.heading-page 
+          | You haven't smoked in
+          br
+          | ____ days, which saved you
+          br
+          | ____ dollars and added
+          br
+          | ____ minutes to your life!
 
-      #craving-or-distraction
-        p I'm having a 
-          a.button-main(href='/craving', data-transition='slide-in') craving
+    #craving-or-distraction
+      .choice-negative 
+        a(href='/craving', data-transition='slide-in') 
+          p I'm having a 
+            strong craving
 
-        p I need a 
-          a.button-main(href='/distraction', data-transition='slide-in') distraction
-
+      .choice-positive 
+        a(href='/distraction', data-transition='slide-in') 
+          p I need a 
+            strong distraction

@@ -2,41 +2,36 @@ mixin onboarding(step)
   case step
     
     when 1
-      p
-        | Entering this data will allow Spyre to track your progress over time.
-      p  
-        form
-          .input-group
-            .input-row
-              label Cigarettes smoked per day
-              input(type='text', placeholder='')
-            .input-row
-              label Cost per pack
-              input(type='text', placeholder='')
-            .input-row
-              label Date Quit
-              input(type='date', placeholder='')
-        a.button-main(href='/onboarding/2', data-transition='slide-in') next
+      .content-padded
+        h2.heading-page Entering this data will allow Spyre to track your progress over time.
+        p  
+          form
+            .input-group
+              input(type='text', placeholder='Cigarettes smoked per day')
+              input(type='text', placeholder='Cost per pack')
+              input(type='text', placeholder='mm/dd/yy')
+          a.button-main.button-block(href='/onboarding/2', data-transition='slide-in') next
     
     when 2
-      p When you go on vacation, do you&hellip;
-        a.button-main(href='/onboarding/3', data-transition='slide-in') have a plan
-        |  or 
-        a.button-main(href='/onboarding/3', data-transition='slide-in') wing it
+      .content-padded
+        h2.heading-page When you go on vacation, do you&hellip;
+      a.choice-negative(href='/onboarding/3', data-transition='slide-in') have a plan
+      a.choice-positive(href='/onboarding/3', data-transition='slide-in') wing it
 
     when 3
-      p in school, do you like
-        a.button-main(href='/onboarding/4', data-transition='slide-in') science class
-        |  or 
-        a.button-main(href='/onboarding/4', data-transition='slide-in') art class
+      .content-padded
+        h2.heading-page In school, do you like
+      a.choice-negative(href='/onboarding/4', data-transition='slide-in') science class
+      a.choice-positive(href='/onboarding/4', data-transition='slide-in') art class
 
     when 4
-      p In general, do you&hellip;
-        a.button-main(href='/onboarding/5', data-transition='slide-in') seek truth
-        |  or
-        a.button-main(href='/onboarding/5', data-transition='slide-in') empathize with others
+      .content-padded
+        h2.heading-page In general, do you&hellip;
+      a.choice-negative(href='/onboarding/5', data-transition='slide-in') seek truth
+      a.choice-positive(href='/onboarding/5', data-transition='slide-in') empathize with others
 
     when 5
-      p How long after you wake up do you have your first cigarette?
-        input(type='text', placeholder='')
-        a.button-main(href='/home', data-transition='slide-in') done
+      .content-padded
+        h2.heading-page How long after you wake up do you have your first cigarette?
+        input(type='number', placeholder='')
+        a.button-main.button-block(href='/home', data-transition='slide-in') done

@@ -8,8 +8,12 @@
 body
   -webkit-font-smoothing: antialiased
   font-family: font-text
+  font-size: 100%
   opacity: 0
 
+a
+  color color-hot
+  text-decoration none
 
 // show only when typekit is loaded
 .wf-active, .wf-inactive
@@ -20,16 +24,16 @@ body
 h1,h2,h3,h4,h5,h6
   font-weight: 300
 
-.content-padded
-  h1
-    font-size: 2em
-    line-height: 1.5em
+h1.heading-page
+  text-align center
+  text-transform uppercase
+  margin-bottom: 0.2em
 
-#signup
-  h1
-    margin: 0 0 0.2em
-    font-size: 2em
-    text-align: center
+h2.heading-page
+  text-align: center
+  font-weight: 300
+  margin-bottom 0.5em
 
-#via-or
-  margin: 1em auto
+.input-row 
+  label
+    font-weight normal

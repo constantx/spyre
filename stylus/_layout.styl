@@ -1,0 +1,53 @@
+active-tab-border-width = 6px
+
+.tab-icon
+  padding: 0
+  width: 35px
+  height: 35px
+
+.tab-item
+  &.active
+    border-top-width active-tab-border-width
+    top: -(active-tab-border-width/2)
+
+.content
+  padding-top 1em
+////////////////////////////////////////////////////////////////////////
+// signin screen
+#signin
+  margin-top: 1em
+
+////////////////////////////////////////////////////////////////////////
+// signup screen
+#signup
+  margin-top 1em
+
+#via-or,
+#via-social
+  text-align: center
+
+#via-or
+  margin 3em 0 1em
+
+
+#step-count
+  text-align: center
+  width 200px
+  left: 50%
+  margin-left -100px
+  position: absolute
+  bottom: 1em
+
+[class*='choice-']
+  box-sizing: border-box
+  position absolute
+  width: 50%
+  padding: 2em 0.2em
+
+  strong
+    display block
+
+#home-stats
+  text-align: center
+  .heading-page
+    margin-bottom: 1em
