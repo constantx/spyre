@@ -22,8 +22,8 @@ SpyreAppView = Backbone.View.extend({
   getLocation: function() {
     var gotLocation, noLocation, self;
     self = this;
-    gotLocation = function(position) {
-      return self.model.set('loc', position);
+    gotLocation = function(geo) {
+      return self.model.set('geo', geo);
     };
     noLocation = function(msg) {
       return window.alert(msg);
@@ -36,6 +36,23 @@ SpyreAppView = Backbone.View.extend({
     return this;
   },
   is_pushed: function() {
+    if (window.location.pathname.match('/stats')) {
+      this.buildMap();
+    }
+    return this;
+  },
+  buildMap: function() {
+    var geo, map, pos;
+    geo = this.model.get('geo');
+    if (geo && geo.coords && geo.coords.latitude) {
+      pos = geo.coords;
+      map = L.map('map').setView([pos.latitude, pos.longitude], 14);
+      L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png', {
+        key: '21c7e179d9f542658c51686febf6ae90',
+        styleId: 79170,
+        maxZoom: 18
+      }).addTo(map);
+    }
     return this;
   }
 });

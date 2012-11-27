@@ -19,11 +19,9 @@
   # subscribe a global push event to push.js callback
   window.addEventListener 'push', (e) ->
     window.Spyre.E.trigger 'push'
-
   
-  # PUB/SUB
+  # APP PUB/SUB
   window.Spyre.E.on 'push', (e) ->
     window.Spyre.AppView.$el.trigger('push')
-
 
   @

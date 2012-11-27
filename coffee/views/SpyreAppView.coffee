@@ -22,8 +22,8 @@ SpyreAppView = Backbone.View.extend
     self = @
 
     # get location
-    gotLocation = (position) ->
-      self.model.set 'loc', position
+    gotLocation = (geo) ->
+      self.model.set 'geo', geo
     
     noLocation = (msg) ->
       window.alert msg
@@ -37,5 +37,21 @@ SpyreAppView = Backbone.View.extend
     @
 
   is_pushed: ->
-    
+    if window.location.pathname.match('/stats')
+      @buildMap() 
+
+    @
+
+  buildMap: ->
+    geo = @model.get('geo')
+    if geo && geo.coords && geo.coords.latitude
+      pos = geo.coords
+
+      map = L.map('map').setView([pos.latitude, pos.longitude], 14)
+      L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png',
+        key: '21c7e179d9f542658c51686febf6ae90'
+        styleId: 79170
+        maxZoom: 18
+      ).addTo(map)
+
     @

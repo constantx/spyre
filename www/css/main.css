@@ -2,9 +2,12 @@
 /* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/node_modules/stylus/lib/functions/index.styl */
 
 /* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/main.styl */
-@import "font-awesome.css";
+@import "http://cdn.leafletjs.com/leaflet-0.4/leaflet.css";
 
 /* line 2 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/main.styl */
+@import "font-awesome.css";
+
+/* line 3 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/main.styl */
 @import "ratchet.css";
 
 /* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_var.styl */
@@ -176,7 +179,12 @@ h2.heading-page {
   margin-bottom: 1em;
 }
 
-/* line 53 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 54 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_layout.styl */
+#map {
+  height: 210px;
+}
+
+/* line 56 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 
 /* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 [class*="button"] {
