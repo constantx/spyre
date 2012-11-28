@@ -34,7 +34,9 @@ SpyreAppView = Backbone.View.extend({
     return this;
   },
   is_pushed: function() {
+    alert('is pushed');
     if (window.location.pathname.match('/stats')) {
+      alert('path match');
       this.buildMap();
     }
     return this;
