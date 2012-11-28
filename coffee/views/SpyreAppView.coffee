@@ -14,7 +14,9 @@ SpyreAppView = Backbone.View.extend
     barTabView = new window.BarTabView()
 
     # get location and store in model
-    @getLocation()
+    console.log ('before getting location')
+    @.getLocation()
+    console.log ('after gettting location')
 
     @
   

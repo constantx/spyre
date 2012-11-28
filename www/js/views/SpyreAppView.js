@@ -16,7 +16,9 @@ SpyreAppView = Backbone.View.extend({
     var barTabView, self;
     self = this;
     barTabView = new window.BarTabView();
+    console.log('before getting location');
     this.getLocation();
+    console.log('after gettting location');
     return this;
   },
   getLocation: function() {
