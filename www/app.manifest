@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 0.0.12-1
+
+CACHE:
+*.html
+/css
+/font
+/img
+/js
+/res

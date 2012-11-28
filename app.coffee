@@ -6,6 +6,7 @@ express = require("express")
 routes  = require("./routes")
 http    = require("http")
 path    = require("path")
+fs      = require("fs")
 app     = express()
 
 app.configure ->
@@ -40,6 +41,11 @@ app.get "/onboarding/2",              routes.onboarding_2
 app.get "/onboarding/3",              routes.onboarding_3
 app.get "/onboarding/4",              routes.onboarding_4
 app.get "/onboarding/5",              routes.onboarding_5
+
+app.get "/app.manifest", (req, res) ->
+  res.header("Content-Type", "text/cache-manifest")
+  fs.readFile __dirname + '/www/app.manifest', 'utf8', (err, text) ->
+    res.send(text)
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")

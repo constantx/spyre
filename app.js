@@ -3,7 +3,7 @@
 Module dependencies.
 */
 
-var app, express, http, path, routes;
+var app, express, fs, http, path, routes;
 
 express = require("express");
 
@@ -12,6 +12,8 @@ routes = require("./routes");
 http = require("http");
 
 path = require("path");
+
+fs = require("fs");
 
 app = express();
 
@@ -62,6 +64,13 @@ app.get("/onboarding/3", routes.onboarding_3);
 app.get("/onboarding/4", routes.onboarding_4);
 
 app.get("/onboarding/5", routes.onboarding_5);
+
+app.get("/app.manifest", function(req, res) {
+  res.header("Content-Type", "text/cache-manifest");
+  return fs.readFile(__dirname + '/www/app.manifest', 'utf8', function(err, text) {
+    return res.send(text);
+  });
+});
 
 http.createServer(app).listen(app.get("port"), function() {
   return console.log("Express server listening on port " + app.get("port"));
