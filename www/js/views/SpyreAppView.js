@@ -42,6 +42,8 @@ SpyreAppView = Backbone.View.extend({
   buildMap: function() {
     var geo, map, pos;
     geo = this.model.get('geo');
+    alert('building map');
+    alert(geo);
     if (geo && geo.coords && geo.coords.latitude) {
       pos = geo.coords;
       map = L.map('map').setView([pos.latitude, pos.longitude], 14);

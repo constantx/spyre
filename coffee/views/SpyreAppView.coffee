@@ -45,6 +45,9 @@ SpyreAppView = Backbone.View.extend
   buildMap: ->
     geo = @.model.get('geo')
     
+    alert('building map')
+    alert(geo)
+    
     if geo && geo.coords && geo.coords.latitude
       pos = geo.coords
 
