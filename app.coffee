@@ -21,8 +21,16 @@ app.configure ->
   app.use express.static(path.join(__dirname, "www"))
 
 app.configure "development", ->
+  app.use express.errorHandler
+    dumpExceptions: true
+    showStack: true
+  app.locals.pretty = true
+
+app.configure "production", ->
   app.use express.errorHandler()
 
+
+# ROUTES
 app.get "/",                          routes.signup
 app.get "/home",                      routes.home
 app.get "/stats",                     routes.stats

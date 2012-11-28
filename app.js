@@ -30,6 +30,14 @@ app.configure(function() {
 });
 
 app.configure("development", function() {
+  app.use(express.errorHandler({
+    dumpExceptions: true,
+    showStack: true
+  }));
+  return app.locals.pretty = true;
+});
+
+app.configure("production", function() {
   return app.use(express.errorHandler());
 });
 
