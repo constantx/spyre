@@ -25,9 +25,7 @@ SpyreAppView = Backbone.View.extend({
     gotLocation = function(geo) {
       return self.model.set('geo', geo);
     };
-    noLocation = function(msg) {
-      return window.alert(msg);
-    };
+    noLocation = function(msg) {};
     if (navigator && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(gotLocation, noLocation);
     } else {

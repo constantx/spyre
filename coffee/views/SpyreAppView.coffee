@@ -26,7 +26,7 @@ SpyreAppView = Backbone.View.extend
       self.model.set 'geo', geo
     
     noLocation = (msg) ->
-      window.alert msg
+      
 
     # console.log(arguments);
     if navigator && navigator.geolocation
@@ -43,7 +43,8 @@ SpyreAppView = Backbone.View.extend
     @
 
   buildMap: ->
-    geo = @model.get('geo')
+    geo = @.model.get('geo')
+    
     if geo && geo.coords && geo.coords.latitude
       pos = geo.coords
 
