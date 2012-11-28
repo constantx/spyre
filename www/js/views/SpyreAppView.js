@@ -16,9 +16,7 @@ SpyreAppView = Backbone.View.extend({
     var barTabView, self;
     self = this;
     barTabView = new window.BarTabView();
-    console.log('before getting location');
     this.getLocation();
-    console.log('after gettting location');
     return this;
   },
   getLocation: function() {
@@ -36,7 +34,6 @@ SpyreAppView = Backbone.View.extend({
     return this;
   },
   is_pushed: function() {
-    console.log('is pushed');
     if (window.location.pathname.match('/stats')) {
       this.buildMap();
     }
@@ -44,7 +41,6 @@ SpyreAppView = Backbone.View.extend({
   },
   buildMap: function() {
     var geo, map, pos;
-    console.log('building map');
     geo = this.model.get('geo');
     if (geo && geo.coords && geo.coords.latitude) {
       pos = geo.coords;

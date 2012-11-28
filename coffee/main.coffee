@@ -22,8 +22,6 @@ $(document).ready ->
 
   # subscribe a global push event to push.js callback
   window.addEventListener 'push', ->
-    console.log('before trigger push')
     window.Spyre.E.trigger 'push'
-    console.log('after trigger push')
 
   @

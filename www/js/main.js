@@ -12,9 +12,7 @@ $(document).ready(function() {
     return window.Spyre.AppView.$el.trigger('push');
   });
   window.addEventListener('push', function() {
-    console.log('before trigger push');
-    window.Spyre.E.trigger('push');
-    return console.log('after trigger push');
+    return window.Spyre.E.trigger('push');
   });
   return this;
 });

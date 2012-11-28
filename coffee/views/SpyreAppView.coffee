@@ -14,9 +14,7 @@ SpyreAppView = Backbone.View.extend
     barTabView = new window.BarTabView()
 
     # get location and store in model
-    console.log ('before getting location')
     @.getLocation()
-    console.log ('after gettting location')
 
     @
   
@@ -30,7 +28,6 @@ SpyreAppView = Backbone.View.extend
     noLocation = (msg) ->
       
 
-    # console.log(arguments);
     if navigator && navigator.geolocation
       navigator.geolocation.getCurrentPosition gotLocation, noLocation
     else
@@ -39,14 +36,12 @@ SpyreAppView = Backbone.View.extend
     @
 
   is_pushed: ->
-    console.log('is pushed')
     if window.location.pathname.match('/stats')
       @buildMap()
 
     @
 
   buildMap: ->
-    console.log('building map')
     geo = @.model.get('geo')
     
     if geo && geo.coords && geo.coords.latitude
