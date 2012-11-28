@@ -14,8 +14,17 @@
 
 !function () {
 
-  var popover;
+  if (typeof CustomEvent === 'undefined') {
+    CustomEvent = function(type, eventInitDict) {
+        var event = document.createEvent('CustomEvent');
 
+        event.initCustomEvent(type, eventInitDict['bubbles'], eventInitDict['cancelable'], eventInitDict['detail']);
+        return event;
+    };
+  }
+
+  var popover;
+  
   var findPopovers = function (target) {
     var i, popovers = document.querySelectorAll('a');
     for (; target && target !== document; target = target.parentNode) {
