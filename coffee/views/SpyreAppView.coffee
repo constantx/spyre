@@ -52,6 +52,7 @@ SpyreAppView = Backbone.View.extend
         key: '21c7e179d9f542658c51686febf6ae90'
         styleId: 79170
         maxZoom: 18
+        tileSize: 128
       ).addTo(map)
 
     @
