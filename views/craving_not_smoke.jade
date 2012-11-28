@@ -6,13 +6,19 @@ block bar-title-center
 block content
   #craving.craving-not-smoke
     .content-padded
-      h1 Congratulations!
-      p Every cigarette avoided is a great accomplishment. It's tough to avoid a craving when you're in the moment, but it gets easier every time. Keep up the good work!
+      h2.heading-page Congratulations!
+      p 
+        | Every cigarette avoided is a great accomplishment. It's tough to avoid a craving when you're in the moment, but it gets easier every time.
+        br
+        | Keep up the good work!
 
       #social
-        h1 Tell your friends
-        p 
-          a.button-main(href='') twitter
-          br
-          a.button-main(href='') facebook
-
+        h3.heading-page Tell your friends
+        #via-social
+          a#via-fb(href='')
+            i.icon-facebook-sign
+            | &nbsp; via Facebook
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          a#via-tw(href='')
+            i.icon-twitter-sign
+            | &nbsp; via Twitter

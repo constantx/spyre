@@ -5,10 +5,13 @@ block bar-title-center
 
 block bar-title-left
   if step == 1 
-    a.button.button-back(href='/signup', data-transition='slide-out') Back
+    a.button-back(href='/signup', data-transition='slide-out')
+      i.icon-chevron-left
   else
     - lastStep = step - 1
-    a.button.button-back(href='/onboarding/#{lastStep}', data-transition='slide-out') Back
+    a.button-back(href='/onboarding/#{lastStep}', data-transition='slide-out')
+      i.icon-chevron-left
+      
 
 //- no bar tab on signup page
 block bar-tab

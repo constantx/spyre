@@ -98,8 +98,15 @@ h2.heading-page {
 }
 
 /* line 38 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+h3.heading-page {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
 
-/* line 39 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+/* line 43 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 44 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 .input-row label {
   font-weight: normal;
 }
@@ -185,7 +192,12 @@ h2.heading-page {
   height: 210px;
 }
 
-/* line 56 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 57 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_layout.styl */
+#social {
+  margin-top: 2em;
+}
+
+/* line 59 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 
 /* line 1 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 [class*="button"] {
@@ -236,121 +248,137 @@ h2.heading-page {
 }
 
 /* line 37 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.bar-title .button-back {
+  font-size: 1.5em;
+  padding: 0.3em 0.5em 0.2em;
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  color: #2d2d29;
+  text-shadow: none;
+}
+
+/* line 46 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .content {
   background-color: rgba(255,255,250,0.8);
   z-index: 2;
 }
 
-/* line 42 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 51 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .bar-tab {
   background: #fffffa;
   border: none;
 }
 
-/* line 46 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 55 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .count-main {
   background: none;
   background-color: #fa7c07;
 }
 
-/* line 50 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 59 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .tab-item {
   border-top: solid 1px #d7d7d3;
   position: relative;
 }
 
-/* line 54 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 63 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .tab-item a {
   color: #2d2d29;
 }
 
-/* line 57 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 66 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .tab-item.active {
   box-shadow: none;
   border-top-color: #fa7c07;
   border-top-style: solid;
 }
 
-/* line 62 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 71 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .tab-item.active a {
   color: #fa7c07;
 }
 
-/* line 65 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 74 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .tab-icon {
   font-size: 2em;
 }
 
-/* line 68 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 77 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 [class*='choice-'] {
   font-weight: 300;
   text-align: center;
   text-transform: capitalize;
 }
 
-/* line 73 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 82 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 [class*='choice-'] a {
   color: #fffffa;
 }
 
-/* line 75 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 84 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 [class*='choice-'] strong {
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 81 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 90 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .choice-negative {
   background-color: #2d2d29;
   color: #fffffa;
 }
 
-/* line 85 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 94 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .choice-positive {
   background-color: #fa7c07;
   color: #fffffa;
   left: 50%;
 }
 
-/* line 90 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 99 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social {
   text-transform: uppercase;
   font-weight: bold;
 }
 
-/* line 94 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 103 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social [class*='icon'] {
   font-size: 1em;
 }
 
-/* line 97 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 106 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social a {
   border-bottom: solid 1px #fa7c07;
 }
 
-/* line 100 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 109 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social #via-fb {
   color: #3b5998;
   border-bottom-color: #3b5998;
 }
 
-/* line 104 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 113 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-social #via-tw {
   color: #0094c2;
   border-bottom-color: #0094c2;
 }
 
-/* line 108 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 117 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 #via-or {
   text-transform: uppercase;
   color: #707066;
   font-size: 0.8em;
 }
 
-/* line 113 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 122 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 
-/* line 114 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+/* line 123 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
 .onboarding [class*='choice-'] {
   font-weight: bold;
+}
+
+/* line 126 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#craving {
+  text-align: center;
 }

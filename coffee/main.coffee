@@ -1,4 +1,4 @@
-  $(document).ready ->
+$(document).ready ->
   # init event watcher
   window.Ev = _.extend {}, Backbone.Events
   
@@ -17,11 +17,11 @@
   fingerBlast = new window.FingerBlast(window.Spyre.AppView.el)
   
   # subscribe a global push event to push.js callback
-  window.addEventListener 'push', (e) ->
+  window.addEventListener 'push', ->
     window.Spyre.E.trigger 'push'
   
   # APP PUB/SUB
-  window.Spyre.E.on 'push', (e) ->
+  window.Spyre.E.on 'push', ->
     window.Spyre.AppView.$el.trigger('push')
 
   @

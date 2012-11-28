@@ -1,20 +1,27 @@
 extends layouts/base
 
+block bar-title-left
+  a.button-back(href='/home', data-transition='slide-out')
+    i.icon-chevron-left
+
 block bar-title-center
   h1.title= title
 
 block content
-  .content-padded
-    #craving
-      h1 craving
-      h2 Try breathing deeply for a couple minutes
+  #craving
+    .content-padded
+      h2.heading-page Try breathing deeply for a couple minutes
       p It sounds cheesy, but it actually helps. Deep breathing helps expand the lungs, increase oxygen in the blood, and promotes relaxation.
 
-      #craving-or-distraction
-        h1 Now you have a decision to make
-        p I can't do it
-          a.button-main(href='/craving_smoke', data-transition='slide-in') smoke
+  #craving-or-distraction
+    .content-padded
+    h3.heading-page Now you have a decision to make
+    .choice-negative
+      a(href='/craving_smoke', data-transition='slide-in')
+        p I can't do it!
+          strong Smoke!
 
-        p I got this
-          a.button-main(href='/craving_not_smoke', data-transition='slide-in') don't smoke
-
+    .choice-positive
+      a(href='/craving_not_smoke', data-transition='slide-in') 
+        p I got this!
+          strong Don't smoke!
