@@ -47,9 +47,10 @@
   -webkit-text-size-adjust: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-user-select: text;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* line 8 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+/* line 9 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 body {
   -webkit-font-smoothing: antialiased;
   font-family: "proxima-nova", "helvetica neue", Arial, sans-serif;
@@ -57,22 +58,22 @@ body {
   opacity: 0;
 }
 
-/* line 14 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+/* line 15 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 a {
   color: #fa7c07;
   text-decoration: none;
 }
 
-/* line 19 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
-
 /* line 20 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 21 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 .wf-active body,
 .wf-inactive body {
   -webkit-transition: opacity 0.3s linear;
   opacity: 1;
 }
 
-/* line 24 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+/* line 25 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 h1,
 h2,
 h3,
@@ -82,23 +83,23 @@ h6 {
   font-weight: 300;
 }
 
-/* line 27 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+/* line 28 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 h1.heading-page {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0.2em;
 }
 
-/* line 32 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+/* line 33 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 h2.heading-page {
   text-align: center;
   font-weight: 300;
   margin-bottom: 0.5em;
 }
 
-/* line 37 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
-
 /* line 38 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 39 : /Users/tnguyen/Dropbox/projects/spyre/app/stylus/_base.styl */
 .input-row label {
   font-weight: normal;
 }

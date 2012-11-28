@@ -18,9 +18,9 @@ html
     link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/res/icon/ios/icon-57-2x.png')
 
     //- Set Apple splash screen for when app is loading
-    link(rel="apple-touch-startup-image", sizes='320x480', href="/res/screen/ios/screen-iphone-portrait.png")
-    link(rel="apple-touch-startup-image", sizes='640x960', href="/res/screen/ios/screen-iphone-portrait-2x.png")
-    link(rel="apple-touch-startup-image", sizes='640x1136', href="/res/screen/ios/screen-iphone-portrait-568h.png")
+    link(rel="apple-touch-startup-image", href="/res/screen/ios/screen-iphone-portrait.png", media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)")
+    link(rel="apple-touch-startup-image", href="/res/screen/ios/screen-iphone-portrait-2x.png", media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)")
+    link(rel="apple-touch-startup-image", href="/res/screen/ios/screen-iphone-portrait-568h.png", media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)")
     
     link(rel='stylesheet', type='text/css', href='/css/main.css')
     
