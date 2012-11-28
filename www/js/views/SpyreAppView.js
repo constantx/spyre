@@ -36,6 +36,7 @@ SpyreAppView = Backbone.View.extend({
     return this;
   },
   is_pushed: function() {
+    console.log('is pushed');
     if (window.location.pathname.match('/stats')) {
       this.buildMap();
     }
@@ -43,6 +44,7 @@ SpyreAppView = Backbone.View.extend({
   },
   buildMap: function() {
     var geo, map, pos;
+    console.log('building map');
     geo = this.model.get('geo');
     if (geo && geo.coords && geo.coords.latitude) {
       pos = geo.coords;

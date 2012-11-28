@@ -39,12 +39,14 @@ SpyreAppView = Backbone.View.extend
     @
 
   is_pushed: ->
+    console.log('is pushed')
     if window.location.pathname.match('/stats')
       @buildMap()
 
     @
 
   buildMap: ->
+    console.log('building map')
     geo = @.model.get('geo')
     
     if geo && geo.coords && geo.coords.latitude
