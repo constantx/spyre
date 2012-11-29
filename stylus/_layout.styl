@@ -7,8 +7,7 @@ active-tab-border-width = 6px
 
 .tab-item
   &.active
-    border-top-width active-tab-border-width
-    top: -(active-tab-border-width/2)
+    border-bottom-width active-tab-border-width
 
 .content
   padding-top 1em
@@ -36,16 +35,43 @@ active-tab-border-width = 6px
   left: 50%
   margin-left -100px
   position: absolute
-  bottom: 1em
+  bottom: 11em
 
 [class*='choice-']
-  box-sizing: border-box
+  -webkit-box-sizing: border-box
   position absolute
+  bottom 0
   width: 50%
-  padding: 2em 0.2em
-
+  padding: 4em 0.2em
+  
   strong
     display block
+
+.choices
+  -webkit-box-sizing: border-box
+  position absolute
+  bottom 10px
+  width 100%
+
+  .heading-page
+    -webkit-box-sizing border-box
+    position absolute
+    top -11em
+    width 95%
+    padding 10px
+    text-align center
+
+.choice-positive
+  left: 50%
+
+#home,
+#craving,
+.onboarding
+  height 100%
+
+.onboarding
+  .heading-page
+    top: -10em
 
 #home-stats
   text-align: center
@@ -57,11 +83,3 @@ active-tab-border-width = 6px
 
 #social
   margin-top 2em
-
-#decision
-  position fixed
-  width 100%
-  height 110px
-  bottom 80px
-  left 0
-  right 0

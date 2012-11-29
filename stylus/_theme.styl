@@ -44,7 +44,7 @@
     text-shadow none
 
 .content
-  background-color: rgba(color-light, 0.8)
+  background-color: rgba(white, 0.8)
   z-index: 2
   // box-shadow 0 -2px 3px 0px rgba(color-dark, 0.15)
 
@@ -65,8 +65,7 @@
 
   &.active
     box-shadow none
-    border-top-color color-hot
-    border-top-style solid
+    border-bottom solid 5px color-hot
 
     a
       color color-hot
@@ -86,7 +85,6 @@
     font-size 1.2em
     font-weight bold
 
-
 .choice-negative
   background-color color-dark
   color color-light
@@ -94,7 +92,6 @@
 .choice-positive
   background-color color-hot
   color color-light
-  left: 50%
 
 #via-social
   text-transform uppercase
@@ -125,3 +122,17 @@
 
 #craving
   text-align center
+  p.tips
+    font-size: 0.9em
+
+#stats-breakdown
+  width 300px
+  margin 0 auto
+  text-align left
+
+  span[class*='stats']
+    display inline-block
+    width 50px
+    text-align center
+    font-weight bold
+    border-bottom solid 1px color-hot

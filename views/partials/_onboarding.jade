@@ -13,22 +13,25 @@ mixin onboarding(step)
           a.button-main.button-block(href='/onboarding/2', data-transition='slide-in') next
     
     when 2
-      .content-padded
-        h2.heading-page When you go on vacation, do you&hellip;
-      a.choice-negative(href='/onboarding/3', data-transition='slide-in') have a plan
-      a.choice-positive(href='/onboarding/3', data-transition='slide-in') wing it
+      .choices
+        .content-padded
+          h2.heading-page When you go on vacation, do you&hellip;
+        a.choice-negative(href='/onboarding/3', data-transition='slide-in') have a plan
+        a.choice-positive(href='/onboarding/3', data-transition='slide-in') wing it
 
     when 3
-      .content-padded
-        h2.heading-page In school, do you like
-      a.choice-negative(href='/onboarding/4', data-transition='slide-in') science class
-      a.choice-positive(href='/onboarding/4', data-transition='slide-in') art class
+      .choices
+        .content-padded
+          h2.heading-page In school, do you like
+        a.choice-negative(href='/onboarding/4', data-transition='slide-in') science class
+        a.choice-positive(href='/onboarding/4', data-transition='slide-in') art class
 
     when 4
-      .content-padded
-        h2.heading-page In general, do you&hellip;
-      a.choice-negative(href='/onboarding/5', data-transition='slide-in') seek the absolute truth
-      a.choice-positive(href='/onboarding/5', data-transition='slide-in') empathize with others
+      .choices
+        .content-padded
+          h2.heading-page In general, do you&hellip;
+        a.choice-negative(href='/onboarding/5', data-transition='slide-in') seek the absolute truth
+        a.choice-positive(href='/onboarding/5', data-transition='slide-in') empathize with others
 
     when 5
       .content-padded

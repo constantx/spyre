@@ -1,5 +1,8 @@
 extends layouts/base
 
+//- no bar tab on signup page
+block bar-tab
+
 block bar-title-center
   h1.title= title
 
@@ -13,8 +16,6 @@ block bar-title-left
       i.icon-chevron-left
       
 
-//- no bar tab on signup page
-block bar-tab
 
 mixin step-count(current_step)
   - var i = 1
@@ -28,6 +29,6 @@ mixin step-count(current_step)
 
 block content
   .onboarding(id='onboarding#{step}')
-      mixin onboarding(step)
+    mixin onboarding(step)
   #step-count
     mixin step-count(step)

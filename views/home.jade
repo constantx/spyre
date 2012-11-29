@@ -10,22 +10,26 @@ block content
   #home
     .content-padded
       #home-stats
-        h2.heading-page 
+        h2.heading-page
           | You haven't smoked in
-          br
-          | ____ days, which saved you
-          br
-          | ____ dollars and added
-          br
-          | ____ minutes to your life!
+          #stats-breakdown
+            span.stats-days 11
+            |  days, which saved you
+            br
+            span.stats-dollars 50
+            |  dollars and added
+            br
+            span.stats-minutes 90
+            |  minutes to your life!
 
   #decision
-    .choice-negative 
-      a(href='/craving', data-transition='slide-in') 
-        p I'm having a 
-          strong craving
+    .choices
+      .choice-negative 
+        a(href='/craving', data-transition='slide-in') 
+          p I'm having a 
+            strong craving
 
-    .choice-positive 
-      a(href='/distraction', data-transition='slide-in') 
-        p I need a 
-          strong distraction
+      .choice-positive 
+        a(href='/distraction', data-transition='slide-in') 
+          p I need a 
+            strong distraction
