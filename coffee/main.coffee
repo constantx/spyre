@@ -14,7 +14,7 @@ $(document).ready ->
     model: window.Spyre.App
 
   # simulate touch with click event
-  # fingerBlast = new window.FingerBlast(window.Spyre.AppView.el)
+  fingerBlast = new window.FingerBlast(window.Spyre.AppView.el)
   
   # APP PUB/SUB
   window.Spyre.E.on 'push', ->
