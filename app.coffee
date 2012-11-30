@@ -1,4 +1,3 @@
-
 ###
 Module dependencies.
 ###
@@ -28,7 +27,6 @@ app.configure "development", ->
 
 app.configure "production", ->
   app.use express.errorHandler()
-
 
 # ROUTES
 app.get "/",                          routes.signup
