@@ -1,0 +1,27 @@
+
+/* line 1 : /Users/constantx/Dropbox/projects/spyre/app/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_override.styl */
+
+/* line 2 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_override.styl */
+.tab-item a {
+  display: block;
+  height: 100%;
+}
+
+/* line 6 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_override.styl */
+.tab-icon {
+  position: static !important;
+}
+
+/* line 9 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_override.styl */
+.list li {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* line 13 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_override.styl */
+.list li > a:not([class*="button"]) {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

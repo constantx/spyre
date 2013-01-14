@@ -1,0 +1,205 @@
+
+/* line 1 : /Users/constantx/Dropbox/projects/spyre/app/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+[class*="button"] {
+  -webkit-border-radius: 1px;
+  -webkit-background-clip: padding-box;
+  background-color: #f97b06;
+  border: 1px solid #e5e5e5;
+  background-image: -webkit-linear-gradient(90deg, #f1f1f1 0%, #fffff9 100%);
+  text-transform: capitalize;
+  box-shadow: none;
+}
+
+/* line 10 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.bar-title [class*="button"],
+.button-main {
+  background-color: #3ba1a1;
+  border: 1px solid #1b9fbb;
+  background-image: -webkit-linear-gradient(90deg, #1ba5c7 0%, #21b9d9 100%);
+}
+
+/* line 16 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.button-hot {
+  color: color-light;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  background-color: #f97b06 !important;
+  border: 1px solid #e18209 !important;
+  background-image: -webkit-linear-gradient(90deg, rgba(247,128,10,0.7) 0%, rgba(248,155,11,0.7) 100%) !important;
+}
+
+/* line 23 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+[class*="count"] {
+  -webkit-border-radius: 1px;
+  margin-right: 0.5em;
+}
+
+/* line 27 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.bar-title {
+  background: none;
+  border-bottom: solid 1px color-border;
+  z-index: 1;
+}
+
+/* line 32 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.bar-title .title {
+  color: color-dark;
+  text-shadow: none;
+  font-size: 4em;
+}
+
+/* line 37 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.bar-title .button-back {
+  font-size: 1.5em;
+  padding: 0.3em 0.5em 0.2em;
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  color: color-dark;
+  text-shadow: none;
+}
+
+/* line 46 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.content {
+  background-color: rgba(255,255,255,0.8);
+  z-index: 2;
+}
+
+/* line 51 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.bar-tab {
+  background: color-light;
+  border: none;
+}
+
+/* line 55 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.count-main {
+  background: none;
+  background-color: color-hot;
+}
+
+/* line 59 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.tab-item {
+  border-top: solid 1px color-border;
+  position: relative;
+}
+
+/* line 63 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.tab-item a {
+  color: color-dark;
+}
+
+/* line 66 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.tab-item.active {
+  box-shadow: none;
+  border-bottom: solid 5px color-hot;
+}
+
+/* line 70 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.tab-item.active a {
+  color: color-hot;
+}
+
+/* line 73 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.tab-icon {
+  font-size: 2em;
+}
+
+/* line 76 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+[class*='choice-'] {
+  font-weight: 300;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* line 81 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+[class*='choice-'] a {
+  color: color-light;
+}
+
+/* line 83 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+[class*='choice-'] strong {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* line 88 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.choice-negative {
+  background-color: color-dark;
+  color: color-light;
+}
+
+/* line 92 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.choice-positive {
+  background-color: color-hot;
+  color: color-light;
+}
+
+/* line 96 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#via-social {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 100 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#via-social [class*='icon'] {
+  font-size: 1em;
+}
+
+/* line 103 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#via-social a {
+  border-bottom: solid 1px color-hot;
+}
+
+/* line 106 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#via-social #via-fb {
+  color: color-fb;
+  border-bottom-color: color-fb;
+}
+
+/* line 110 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#via-social #via-tw {
+  color: color-tw;
+  border-bottom-color: color-tw;
+}
+
+/* line 114 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#via-or {
+  text-transform: uppercase;
+  color: color-meta;
+  font-size: 0.8em;
+}
+
+/* line 119 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+
+/* line 120 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+.onboarding [class*='choice-'] {
+  font-weight: bold;
+}
+
+/* line 123 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#craving {
+  text-align: center;
+}
+
+/* line 125 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#craving p.tips {
+  font-size: 0.9em;
+}
+
+/* line 128 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#stats-breakdown {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* line 133 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_theme.styl */
+#stats-breakdown span[class*='stats'] {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: solid 1px color-hot;
+}

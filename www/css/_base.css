@@ -1,0 +1,72 @@
+
+/* line 1 : /Users/constantx/Dropbox/projects/spyre/app/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+* {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-user-select: text;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 9 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: font-text;
+  font-size: 100%;
+  opacity: 0;
+}
+
+/* line 15 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+a {
+  color: color-hot;
+  text-decoration: none;
+}
+
+/* line 20 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 21 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+.wf-active body,
+.wf-inactive body {
+  -webkit-transition: opacity 0.3s linear;
+  opacity: 1;
+}
+
+/* line 25 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+/* line 28 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+h1.heading-page {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+/* line 33 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+h2.heading-page {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+/* line 38 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+h3.heading-page {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* line 43 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+
+/* line 44 : /Users/constantx/Dropbox/projects/spyre/app/stylus/_base.styl */
+.input-row label {
+  font-weight: normal;
+}
