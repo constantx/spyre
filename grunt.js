@@ -11,15 +11,22 @@
     grunt.initConfig({
       pkg: "<json:package.json>",
       dirs: {
-        jsSrc: './public/js',
-        dest: '../dist/'
+        cssSrc: './www/css',
+        jsSrc: './www/js',
+        dest: '../dist'
       },
       meta: {
         name: "<%= pkg.name %>",
         banner: "/*! <%= meta.name %> - v<%= pkg.version %> - <%= grunt.template.today(\"m/d/yyyy\") %>\n" + "* <%= pkg.homepage %>\n" + "* Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author.name %>;*/"
       },
+      watch: {
+        scripts: {
+          files: "<config:lint.file>",
+          tasks: "lint:files"
+        }
+      },
       lint: {
-        files: ["./*.js", "config/*.js", "routes/*.js", "mocha/test/**/*.js", "public/js/*.js", "public/js/views/*.js", "public/js/models/*.js"]
+        files: ["./*.js", "config/*.js", "routes/*.js", "mocha/test/**/*.js", "www/js/*.js", "www/js/views/*.js", "www/js/models/*.js"]
       },
       requirejs: {
         compile: {
@@ -35,7 +42,7 @@
       concat: {
         dist: {
           src: ["<banner>", "<%= requirejs.compile.options.dir %>/main.js"],
-          dest: '<%= dirs.dest %>/public/js/main.js'
+          dest: '<%= dirs.dest %>/www/js/main.js'
         }
       },
       copy: {
@@ -45,44 +52,14 @@
             "<%= dirs.dest %>/config/": "./config/**",
             "<%= dirs.dest %>/routes/": "./routes/**",
             "<%= dirs.dest %>/views/": "./views/**",
-            "<%= dirs.dest %>/public/js/": "./public/js/require.js",
-            "<%= dirs.dest %>/public/css/": "./public/css/**",
-            "<%= dirs.dest %>/public/images/": "./public/images/**"
+            "<%= dirs.dest %>/www/": "./www/**"
           }
-        }
-      },
-      watch: {
-        scripts: {
-          files: "<config:lint.file>",
-          tasks: "lint:files"
-        }
-      },
-      jshint: {
-        options: {
-          curly: true,
-          eqeqeq: true,
-          immed: true,
-          latedef: true,
-          newcap: true,
-          noarg: true,
-          sub: true,
-          undef: true,
-          boss: true,
-          eqnull: true
-        },
-        globals: {
-          module: false,
-          exports: true,
-          require: true,
-          define: true,
-          describe: true,
-          it: true
         }
       }
     });
     grunt.loadNpmTasks('grunt-contrib');
     grunt.registerTask("default", "lint");
-    return grunt.registerTask("build", "copy");
+    return grunt.registerTask("build", "lint copy");
   };
 
 }).call(this);

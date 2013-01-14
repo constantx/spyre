@@ -7,7 +7,7 @@
     "node": "0.8.x"
   },
   "scripts": {
-    "start": "app.js"
+    "start": "server.js"
   },
   "dependencies": {
     "express": "3.0.1",
@@ -18,6 +18,10 @@
   },
   "devDependencies": {
     "coffee-script": "1.4.0",
-    "nodemon": "0.6.23"
+    "nodemon": "0.6.23",
+    "mocha": "1.7.0",
+    "should": "1.2.1",
+    "grunt": "0.3.17",
+    "grunt-contrib": "0.3.0"
   }
 }

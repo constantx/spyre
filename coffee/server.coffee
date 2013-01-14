@@ -1,6 +1,7 @@
-###
-Module dependencies.
-###
+###jslint node: true###
+
+"use strict"
+
 express = require("express")
 routes  = require("./routes")
 http    = require("http")
