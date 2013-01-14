@@ -4,7 +4,8 @@
   "version": "0.3.0-0",
   "private": true,
   "engines": {
-    "node": "0.8.x"
+    "node": "0.8.x",
+    "npm": "1.1.65"
   },
   "scripts": {
     "start": "server.js"
