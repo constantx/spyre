@@ -5,8 +5,6 @@
 /*global Backbone:true
 */
 
-"use strict";
-
 var SpyreApp;
 
 SpyreApp = Backbone.Model.extend({

@@ -2,8 +2,6 @@
 /*jslint node: true
 */
 
-"use strict";
-
 var app, express, fs, http, path, routes;
 
 express = require("express");

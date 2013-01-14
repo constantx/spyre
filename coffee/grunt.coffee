@@ -1,7 +1,5 @@
 ###jslint node: true###
 
-"use strict"
-
 module.exports = (grunt) ->
 
   #setup config
@@ -68,5 +66,5 @@ module.exports = (grunt) ->
   # Default task.
   # grunt.registerTask "default", "lint test concat min"
   grunt.registerTask "default", "lint"
-  grunt.registerTask "build", "lint copy"
+  grunt.registerTask "build", "copy"
 

@@ -2,8 +2,6 @@
 /*jslint node: true
 */
 
-"use strict";
-
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: "<json:package.json>",
@@ -56,5 +54,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('grunt-contrib');
   grunt.registerTask("default", "lint");
-  return grunt.registerTask("build", "lint copy");
+  return grunt.registerTask("build", "copy");
 };
