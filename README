@@ -1,1 +1,7 @@
-spyre mobile app prototype
+# spyre mobile app prototype
+
+## TODO
+- [ ] implement require.js
+- [ ] "use strict" and jslint
+- [ ] grunt build task for requirejs
+- [ ] grunt build task for css min
